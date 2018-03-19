@@ -25,6 +25,7 @@
                   </div>
                   <button class="button" onclick="getVotes()">Show Votes</button>
                   <button class="button" onclick="votersCount()">Total Votes</button>
+		  <div id="vote-response"></div>
                   <hr>
                   <button class="button" onclick="deployVoteContract()">Deploy New Vote</button>
                   <div class="input-block">
@@ -75,7 +76,7 @@
        
         voteSC.vote(document.getElementById("proposalid").value, function (error, result) {
             if (!error)
-                document.getElementById('response').innerHTML = 'Success:' + result 
+                document.getElementById('vote-response').innerHTML = 'Success:' + result 
             else
                 console.error(error);
         });           
@@ -89,7 +90,7 @@
 
 	    voteSC.getVoters(0, 1000, function (error, result) {
 	        if (!error)
-	            document.getElementById('response').innerHTML = 'Success:' + result
+	            document.getElementById('vote-response').innerHTML = 'Success:' + result
 	        else
 	            console.error(error);
 	    });
@@ -103,7 +104,7 @@
 
 	    voteSC.votersCount(function (error, result) {
 	        if (!error)
-	            document.getElementById('response').innerHTML = 'Success:' + result
+	            document.getElementById('vote-response').innerHTML = 'Success:' + result
 	        else
 	            console.error(error);
 	    });
