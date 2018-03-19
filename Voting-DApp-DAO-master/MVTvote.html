@@ -20,7 +20,7 @@
                   <div class="input-block">
                       <div class="label">Proposal id:</div>
                       <div class="input-control">
-                          <input name="proposalid" type="text" class="required" autocomplete="off">
+                          <input id="proposalid" type="text" class="required" autocomplete="off">
                       </div>
                   </div>
                   <button class="button" onclick="getVotes()">Show Votes</button>
@@ -43,8 +43,8 @@
                           <input name="urlVote" type="text" class="required" autocomplete="off">
                       </div>
 
-                      <div name="response"></div>
-                      <div name="result"></div>
+                      <div id="response"></div>
+                      <div id="result"></div>
                   </div>
               </div>
         
@@ -73,9 +73,9 @@
         
         console.log('Calling the smart contract');
        
-        voteSC.vote(document.getElementByName("proposalid").value, function (error, result) {
+        voteSC.vote(document.getElementById("proposalid").value, function (error, result) {
             if (!error)
-                document.getElementByName('response').innerHTML = 'Success:' + result 
+                document.getElementById('response').innerHTML = 'Success:' + result 
             else
                 console.error(error);
         });           
