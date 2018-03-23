@@ -1,0 +1,9 @@
+Description Vote: Describe what the vote is about!
+
+Possible choices:
+
+1: Yes
+
+2: NO
+
+3: Maybe
