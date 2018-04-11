@@ -2,71 +2,123 @@
 <meta charset="utf-8">
 <style>
 
-path {
-  stroke: #fff;
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.legend line {
+  stroke: #000;
+  shape-rendering: crispEdges;
 }
 
 </style>
 <body>
-    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
-    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.layout.js"></script>
+<script src="d3.v3.min.js"></script>
 <script>
 
-var width = 960,
-    height = 700,
-    radius = (Math.min(width, height) / 2) - 10;
+// Common
+var margin = {top: 20, right: 100, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom,
+    parse = d3.time.format("%Y").parse
+    format = d3.time.format("%Y");
 
-var formatNumber = d3.format(",d");
+// Scales
+_x = d3.scale.linear()
+  .domain([1640, 1680])
+  .range([0, width]),
+_y = d3.scale.linear()
+  .domain([0,1])
+  .range([400,0]),
+height_scale = d3.scale.linear()
+  .domain([0,1])
+  .range([0,400]);
 
-var x = d3.scale.linear()
-    .range([0, 2 * Math.PI]);
+var color = d3.scale.category20();
 
-var y = d3.scale.sqrt()
-    .range([0, radius]);
+// Axis
+var xAxis = d3.svg.axis()
+      .scale(_x)
+      .orient("bottom"),
+    yAxis = d3.svg.axis()
+      .scale(_y)
+      .orient("left")
+      .tickFormat(d3.format(".0%"));
 
-var color = d3.scale.category20c();
-
-var partition = d3.layout.partition()
-    .value(function(d) { return d.size; });
-
-var arc = d3.svg.arc()
-    .startAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x))); })
-    .endAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))); })
-    .innerRadius(function(d) { return Math.max(0, y(d.y)); })
-    .outerRadius(function(d) { return Math.max(0, y(d.y + d.dy)); });
-
+// Prepare space
 var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height)
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
   .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + (height / 2) + ")");
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("flare.json", function(error, root) {
-  if (error) throw error;
+// Data
+d3.csv("grains.csv", function(error, data) {
+  if (error) return console.error(error);
 
-  svg.selectAll("path")
-      .data(partition.nodes(root))
-    .enter().append("path")
-      .attr("d", arc)
-      .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
-      .on("click", click)
-    .append("title")
-      .text(function(d) { return d.name + "\n" + formatNumber(d.value); });
-});
+exposedData = data;
+uniqueIDs = d3.set(data.map(function(d) {return d.translation})).values();
+stackData = [];
+colorN = d3.scale.category20(uniqueIDs);
 
-function click(d) {
-  svg.transition()
-      .duration(750)
-      .tween("scale", function() {
-        var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]),
-            yd = d3.interpolate(y.domain(), [d.y, 1]),
-            yr = d3.interpolate(y.range(), [d.y ? 20 : 0, radius]);
-        return function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); };
-      })
-    .selectAll("path")
-      .attrTween("d", function(d) { return function() { return arc(d); }; });
+for (var foodType in uniqueIDs) {
+  var foodObject = {name: uniqueIDs[foodType], values: []};
+  for (var x in data) {
+    var yearSum = d3.sum(data.filter(function(d) {return d.date ==  data[x].date}), function (d) {return parseInt(d.amount)});
+    if (data[x].translation == uniqueIDs[foodType]) {
+      var foodDatapoint = {x: _x(parseInt(data[x].date)), y: data[x].amount / yearSum || 0}
+//      var foodDatapoint = {node: data[x], x: _x(parseInt(data[x].date)), y: data[x].amount / yearSum || 0}
+      foodObject.values.push(foodDatapoint)
+    }
+  }
+  stackData.push(foodObject);
 }
 
-d3.select(self.frameElement).style("height", height + "px");
+ console.log(stackData);
+
+  stackLayout = d3.layout.stack()
+    .values(function(d) { return d.values });
+
+d3.select("svg").append("line").attr("x1", 0)
+.attr("x2", 1000).attr("y1", 400).attr("y2", 400).style("stroke", "blue").style("stroke-width", "1px")
+
+  d3.select("svg").selectAll("g")
+    .data(stackLayout(stackData))
+    .enter()
+    .append("g")
+    .attr("class", "bar")
+    .each(function(d,i) {
+      console.log(d);
+      d3.select(this).selectAll("rect")
+        .data(d.values)
+        .enter()
+        .append("rect")
+        .attr("class", "bar")
+        .attr("x", function(p) { return p.x })
+        .attr("y", function(p) { console.log(p.y0,p.y); return _y( p.y0) })
+        .attr("height", function(p) { return height_scale(p.y) })
+        .attr("width", 18)
+        .style("stroke", function() { return colorN(d.name) })
+        .style("stroke-width", "1px")
+        .style("fill", function() { return colorN(d.name) })
+
+    });
+
+});
 
 </script>
