@@ -1,11 +1,11 @@
 {
-"name":  "Bitcoin Forum"
+"name":  "Bitcoin Forum",
 "children": [
 {
-"name":  "Alternate cryptocurrencies"
+"name":  "Alternate cryptocurrencies",
 "children": [
 {
-"name":  "Announcements (Altcoins)"
+"name":  "Announcements (Altcoins)",
 "children": [
 {"name":  "Network Attack on XVG / VERGE " , "size": 26},
 {"name":  "DNotes 2.0 - 4/2/2018 Now Live" , "size": 3},
@@ -15,4 +15,4 @@
 ]
 }
 ]
-},
+}
