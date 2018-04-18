@@ -6,7 +6,10 @@
 <div>
   <input id="grayscalebtn" value="Grayscale" type="button">
   <input id="invertbtn" value="Invert" type="button">
-    <input id="reducebtn" value="Reduce" type="button">
+    <input id="reducebtn16" value="Reduce 16" type="button">
+        <input id="reducebtn32" value="Reduce 32" type="button">
+        <input id="reducebtn64" value="Reduce 64" type="button">
+        <input id="reducebtn128" value="Reduce 128" type="button">
 </div>
 
         
@@ -45,11 +48,38 @@ function draw(img) {
     ctx.putImageData(imageData, 0, 0);
   };
     
-  var reduce = function() {
+  var reduce32 = function() {
+    for (var i = 0; i < data.length; i += 4) {        
+      data[i]     = data[i] - (data[i] % 32); // red
+      data[i + 1] = data[i + 1] - (data[i + 1] % 32); // green
+      data[i + 2] =  data[i + 2] - (data[i + 2] % 32); // blue
+    }
+    ctx.putImageData(imageData, 0, 0);
+  };
+    
+  var reduce64 = function() {
+    for (var i = 0; i < data.length; i += 4) {        
+      data[i]     = data[i] - (data[i] % 64); // red
+      data[i + 1] = data[i + 1] - (data[i + 1] % 64); // green
+      data[i + 2] =  data[i + 2] - (data[i + 2] % 64); // blue
+    }
+    ctx.putImageData(imageData, 0, 0);
+  };
+    
+  var reduce128 = function() {
     for (var i = 0; i < data.length; i += 4) {        
       data[i]     = data[i] - (data[i] % 128); // red
       data[i + 1] = data[i + 1] - (data[i + 1] % 128); // green
       data[i + 2] =  data[i + 2] - (data[i + 2] % 128); // blue
+    }
+    ctx.putImageData(imageData, 0, 0);
+  };
+    
+  var reduce16 = function() {
+    for (var i = 0; i < data.length; i += 4) {        
+      data[i]     = data[i] - (data[i] % 16); // red
+      data[i + 1] = data[i + 1] - (data[i + 1] % 16); // green
+      data[i + 2] =  data[i + 2] - (data[i + 2] % 16); // blue
     }
     ctx.putImageData(imageData, 0, 0);
   };
@@ -58,8 +88,14 @@ function draw(img) {
   invertbtn.addEventListener('click', invert);
   var grayscalebtn = document.getElementById('grayscalebtn');
   grayscalebtn.addEventListener('click', grayscale);
-  var reducebtn = document.getElementById('reducebtn');
-  reducebtn.addEventListener('click', reduce);
+  var reducebtn16 = document.getElementById('reducreducebtn16ebtn18');
+  reducebtn16.addEventListener('click', reduce16);
+  var reducebtn32 = document.getElementById('reducebtn32');
+  reducebtn32.addEventListener('click', reduce32);
+  var reducebtn64 = document.getElementById('reducebtn64');
+  reducebtn64.addEventListener('click', reduce64);
+  var reducebtn128 = document.getElementById('reducebtn128');
+  reducebtn128.addEventListener('click', reduce128);
 }
 
             </script>
