@@ -1,13 +1,21 @@
-<!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas -->
-
-<canvas id="canvas" width="300" height="227"></canvas>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://developer.mozilla.org/static/build/styles/samples.37902ba3b7fe.css" rel="stylesheet" type="text/css" />
+        
+    </head>
+    <body>
+        
+            <canvas id="canvas" width="300" height="227"></canvas>
 <div>
   <input id="grayscalebtn" value="Grayscale" type="button">
   <input id="invertbtn" value="Invert" type="button">
 </div>
 
-<script>
-var img = new Image();
+        
+        
+            <script type="text/javascript">
+                var img = new Image();
 img.src = 'https://mdn.mozillademos.org/files/5397/rhino.jpg';
 img.onload = function() {
   draw(this);
@@ -46,4 +54,7 @@ function draw(img) {
   grayscalebtn.addEventListener('click', grayscale);
 }
 
-</script>
+            </script>
+        
+    </body>
+</html>
