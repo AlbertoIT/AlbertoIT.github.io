@@ -46,8 +46,7 @@ function draw(img) {
   };
     
   var reduce = function() {
-    for (var i = 0; i < data.length; i += 4) {
-      ( + (Math.floor((green / 32)) << 2) +;
+    for (var i = 0; i < data.length; i += 4) {     
       data[i]     = Math.floor((data[i] / 32)) << 5; // red
       data[i + 1] = Math.floor((data[i+1] / 32)) << 2; // green
       data[i + 2] =  Math.floor((data[i+2] / 64)); // blue
