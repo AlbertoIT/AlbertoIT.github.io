@@ -83,6 +83,31 @@ function draw(img) {
     }
     ctx.putImageData(imageData, 0, 0);
   };
+    
+  var countbtn = function() {
+    // get bitmap
+    var idata = ctx.getImageData(0, 0, w, h),            // area to analyze
+        buffer32 = new Uint32Array(idata.data.buffer),   // use 32-bit buffer (faster)
+        i, len = buffer32.length,
+        stats = {};
+
+    for(i = 0; i < len; i++) {
+      var key = "" + (buffer32[i] & 0xffffff);           // filter away alpha channel
+      if (!stats[key]) stats[key] = 0;                   // init this color key
+      stats[key]++                                       // count it..
+    }
+
+    // you can loop through the keys and convert the key into RGB values later
+    out.innerHTML = JSON.stringify(stats);
+
+    // convert first key:
+    var keys = Object.keys(stats),
+        count = keys.length,
+        key = keys[0]
+    var r = key & 0xff, g = (key & 0xff00)>>>8, b = (key & 0xff0000)>>>16;
+    alert("First key: " + r + "," + g + "," + b + "=" + stats[key] + 
+          "\nUnique colors: " + count);
+  };
 
   var invertbtn = document.getElementById('invertbtn');
   invertbtn.addEventListener('click', invert);
@@ -96,6 +121,8 @@ function draw(img) {
   reducebtn64.addEventListener('click', reduce64);
   var reducebtn128 = document.getElementById('reducebtn128');
   reducebtn128.addEventListener('click', reduce128);
+  var countbtn = document.getElementById('countbtn');
+  countbtn.addEventListener('click', countPixels);
 }
 
             </script>
