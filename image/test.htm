@@ -97,10 +97,7 @@ function draw(img) {
       if (!stats[key]) stats[key] = 0;                   // init this color key
       stats[key]++                                       // count it..
     }
-
-    // you can loop through the keys and convert the key into RGB values later
-    out.innerHTML = JSON.stringify(stats);
-
+      
     // convert first key:
     var keys = Object.keys(stats),
         count = keys.length,
