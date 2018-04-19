@@ -85,7 +85,7 @@ function draw(img) {
     ctx.putImageData(imageData, 0, 0);
   };
     
-  var countbtn = function() {
+  var countPixels = function() {
     // get bitmap
     var idata = ctx.getImageData(0, 0, w, h),            // area to analyze
         buffer32 = new Uint32Array(idata.data.buffer),   // use 32-bit buffer (faster)
