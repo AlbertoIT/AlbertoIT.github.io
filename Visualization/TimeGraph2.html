@@ -77,11 +77,13 @@ function zoomChart() {
 
 // generate some random data, quite different range
 function generateChartData() 
-d3.csv("data.csv", function(d) {
-  return {    Date: +d.Date,  AM: +d["AM"]  };
-}, function(data) {
-    console.log(data[1]);
-});
+	d3.csv('data.csv', function(day_data) {
+  var formatDate = d3.time.format("%Y-%m-%d");
+  var bisectDate = d3.bisector(function(d) { return formatDate.parse(d['date']); }).left;
+  // fix those integers
+  day_data.forEach(function(d, i) {
+    d.value = parseInt(d.value);
+  });
     var chartData = [];
     var firstDate = new Date();
     firstDate.setDate(firstDate.getDate() - 5);
