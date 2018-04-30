@@ -15,6 +15,8 @@ var width = 960,
     height = 700,
     radius = (Math.min(width, height) / 2) - 10;
 
+var totalSize = 0;
+
 var formatNumber = d3.format(",d");
 
 var x = d3.scale.linear()
@@ -43,6 +45,9 @@ var svg = d3.select("body").append("svg")
 d3.json("flare.json", function(error, root) {
   if (error) throw error;
 
+  // Get total size of the tree = value of root node from partition.
+  totalSize = 140000;
+  
   svg.selectAll("path")
       .data(partition.nodes(root))
     .enter().append("path")
@@ -50,7 +55,7 @@ d3.json("flare.json", function(error, root) {
       .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
       .on("click", click)
     .append("title")
-      .text(function(d) { return d.name + "\n" + formatNumber(d.value); });
+      .text(function(d) { return d.name + "\n" + formatNumber(d.value) + "\n" + (100 * d.value / totalSize).toPrecision(3); });
 });
 
 function click(d) {
