@@ -86,7 +86,7 @@
                   document.getElementById("linkingKey").value = Math.floor((Math.random() * 1000000000000000) + 1)
               }
 
-              var scAddress = '0xcbe71234b271a5c154e4905a3fa3eb113fb3349b';
+              var scAddress = '0x7746fe802c0851cf21367286c8822f4321a14c75';
               var scAbi = [{ "constant": false, "inputs": [{ "name": "linkKey", "type": "uint256" }], "name": "linkAccount", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "newMail", "type": "string" }], "name": "verifyOwnership", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "address" }], "name": "_linkAccount", "outputs": [{ "name": "linkKey", "type": "uint256" }, { "name": "recoveryMail", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": false, "name": "account", "type": "address" }, { "indexed": false, "name": "linkingKey", "type": "uint256" }], "name": "ProofOfOwnership", "type": "event" }];
 
               function linkAccount() {
