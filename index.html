@@ -55,7 +55,7 @@ d3.json("flare.json", function(error, root) {
       .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
       .on("click", click)
     .append("title")
-      .text(function(d) { return d.name + "\n" + formatNumber(d.value) + "\n" + (100 * d.value / totalSize).toPrecision(3) + "\n"; });
+      .text(function(d) { return d.name + "\n" + formatNumber(d.value) + "\n" + (100 * d.value / root.value).toPrecision(3) + "%"; });
 });
 
 function click(d) {
