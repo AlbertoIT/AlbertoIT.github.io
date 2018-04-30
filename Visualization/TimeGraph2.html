@@ -79,8 +79,8 @@ var context = svg.append("g")
 
 d3.csv("data.csv", type, function (error, data) {
   if (error) throw error;
-
-  x.domain(d3.extent(data, function(d) { return d.date; }));
+	var formatDate = d3.time.format("%Y-%m-%d");
+  x.domain(d3.extent(data, function(d) { return formatDate.parse(d['date']);}));
   y.domain([0, d3.max(data, function (d) { return d.value; })]);
   x2.domain(x.domain());
   y2.domain(y.domain());
