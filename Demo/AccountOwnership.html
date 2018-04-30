@@ -1,0 +1,188 @@
+<html>
+  <head>
+     <title>Account Ownership demo.</title>
+  </head>
+  <body>
+  <div id="meta-mask-required"></div>
+      <fieldset>
+          <font size="4">Instructions:<br>
+
+ - Make sure to have Metamask running, connect to the Ropsten test net, create a new address<br>
+ - Connect to Ropsten test net and get some ETH here to be able to interact with the smart contract: <a target="_blank" href="http://faucet.ropsten.be:3001">http://faucet.ropsten.be:3001</a><br>
+ - Reload this page</font><br><br>
+      </fieldset>
+          <fieldset>
+              <font size="6">Step 1:</font><br>
+              <font size="4">User links his ETH address to key provided in his personal account page:</font><br><br>
+              <button onclick="newKey()">New Key</button>
+              <label>
+                  Key:
+                  <input type="text" id="linkingKey" disabled="true"></input>
+              </label>
+              <label>
+                  Eth address:
+                  <input type="text" id="ethAddress" disabled="true"></input>
+              </label>
+
+              <button onclick="linkAccount()">Link ETH address to key</button><br>  <br>
+
+              <font size="4">After the transaction is confirmed, the user will confirm on the website he has secured his account using the key and ETH address above. Note that you can just link one ETH address to one given key.</font><br><br>
+              <font size="4">You can check if your account is linked with the key in here:</font><br><br>
+              <button onclick="verifyLinkAccount('response')">See my key</button><br>
+              <div id="response"></div>
+
+
+          </fieldset>
+
+
+
+          <fieldset>
+              <font size="6">Step 2:</font><br>
+              <font size="4">The account is compromised, the user prove the ownership specifying a recovery mail:</font><br><br>
+              <label>
+                  Recovery mail:
+                  <input type="text" id="newMail"></input>
+              </label>
+              <button onclick="proveOwnership()">Prove Ownership</button>
+
+              <div id="response2"></div>
+          </fieldset>
+
+          <fieldset>
+              <font size="6">Step 3:</font><br>
+              <font size="4">The owner of the forum checks from time to time if there are new proofs of ownership and if any account is binded with that particular key:</font><br><br>
+              <button onclick="checkOwnershipEvents()">see Proof of Ownership events</button><br><br>
+              <font size="4">If there is a match get the mail where the details to recover the account will be sent:</font><br><br>
+              <button onclick="verifyLinkAccount('response3')">see account mail</button><br><br>
+              <div id="response3"></div>
+              <div id="event"></div>
+          </fieldset>
+          <script>
+              // MetaMask injects the web3 library for us.
+              window.onload = function () {
+                  if (typeof web3 === 'undefined') {
+                      document.getElementById('meta-mask-required').innerHTML = 'You need <a href="https://metamask.io/">MetaMask</a> browser plugin to run the demo!'
+                  }
+
+                  document.getElementById("linkingKey").value = Math.floor((Math.random() * 1000000000000000) + 1)
+                  document.getElementById("newMail").value = "mymail@provider.com"
+
+                  // Check the connection
+                  if (!web3.isConnected()) {
+                      console.error("Not connected");
+
+                  }
+
+                  var account = web3.eth.accounts[0];
+                  var accountInterval = setInterval(function () {
+                      if (web3.eth.accounts[0] !== account) {
+                          account = web3.eth.accounts[0];
+                          document.getElementById("ethAddress").value = account;
+                      }
+                  }, 100);
+              }
+
+              function newKey() {
+                  document.getElementById("linkingKey").value = Math.floor((Math.random() * 1000000000000000) + 1)
+              }
+
+              var scAddress = '0xcbe71234b271a5c154e4905a3fa3eb113fb3349b';
+              var scAbi = [{ "constant": false, "inputs": [{ "name": "linkKey", "type": "uint256" }], "name": "linkAccount", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "newMail", "type": "string" }], "name": "verifyOwnership", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "address" }], "name": "_linkAccount", "outputs": [{ "name": "linkKey", "type": "uint256" }, { "name": "recoveryMail", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": false, "name": "account", "type": "address" }, { "indexed": false, "name": "linkingKey", "type": "uint256" }], "name": "ProofOfOwnership", "type": "event" }];
+
+              function linkAccount() {
+
+                  var pf = web3.eth.contract(scAbi).at(scAddress);
+
+                  console.log('Calling the smart contract');
+
+                  pf.linkAccount(document.getElementById("linkingKey").value, function (error, result) {
+                      if (!error)
+                          document.getElementById('response').innerHTML = 'Success: check your transaction <a target="_blank" href="https://ropsten.etherscan.io/tx/' + result + '">here</a>'
+                      else
+                          console.error(error);
+                  });
+
+              }
+              function verifyLinkAccount(output) {
+                  var pf = web3.eth.contract(scAbi).at(scAddress);
+
+                  console.log('Calling the smart contract');
+
+                  pf._linkAccount(document.getElementById("ethAddress").value, function (error, result) {
+                      if (!error)
+                          document.getElementById(output).innerHTML = 'Success:' + result
+                      else
+                          console.error(error);
+                  });
+              }
+
+              function proveOwnership() {
+                  var pf = web3.eth.contract(scAbi).at(scAddress);
+
+                  console.log('Calling the smart contract');
+
+                  pf.verifyOwnership(document.getElementById("newMail").value, function (error, result) {
+                      if (!error)
+                          document.getElementById('response2').innerHTML = 'Success: check your transaction <a target="_blank" href="https://ropsten.etherscan.io/tx/' + result + '">here</a>'
+                      else
+                          console.error(error);
+                  });
+              }
+
+              function verifyOwnership() {
+                  var pf = web3.eth.contract(scAbi).at(scAddress);
+
+                  console.log('Calling the smart contract');
+
+                  pf.verifyOwnership(document.getElementById("newMail").value, function (error, result) {
+                      if (!error)
+                          document.getElementById('response').innerHTML = 'Success: check your transaction <a target="_blank" href="https://ropsten.etherscan.io/tx/' + result + '">here</a>'
+                      else
+                          console.error(error);
+                  });
+              }
+
+              function checkOwnershipEvents() {
+
+                  document.getElementById("response3").innerHTML = ""
+
+                  //var MyContract = web3.eth.contract(scAbi);
+                  //var myContractInstance = MyContract.at(scAddress);
+                  var pf = web3.eth.contract(scAbi).at(scAddress);
+
+                  // watch for an event with {some: 'args'}
+                  var myEvent = pf.ProofOfOwnership({ some: 'args' }, { fromBlock: 0, toBlock: 'latest' });
+
+                  // would get all past logs again.
+                  var myResults = myEvent.get(function (error, logs) {
+                      console.log(logs);
+
+                      var event1;
+                      for (var i = 0; i < logs.length ; i++) {
+                          event1 = JSON.stringify(logs[i].args);
+                          document.getElementById("response3").innerHTML += "Proof of ownership received: " + JSON.stringify(event1) + "<br>"
+                      }
+                  });
+
+
+                  //document.getElementById("response").innerHTML = ""
+                  //const allEvents = web3.eth.filter({
+                  //    fromBlock: 0,
+                  //    toBlock: 'latest',
+                  //    address: scAddress
+                  //});
+
+                  //allEvents.get(function (err, events) {
+                  //    console.log(events);
+
+                  //    var event1;
+                  //    for (var i = 0; i < events.length ; i++) {
+                  //        event1 = JSON.stringify(events[i].args);
+                  //        document.getElementById("response").innerHTML += JSON.stringify(event1) + "<br>"
+                  //    }
+                  //});
+
+              }
+          </script>
+</body>
+</html>
