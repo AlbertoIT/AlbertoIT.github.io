@@ -120,7 +120,7 @@
                 
                   pf._linkAccount(ethaddress, function (error, result) {
                       if (!error)
-                          document.getElementById(output).innerHTML = '<font color="green">Key: </font>: ' + result
+                          document.getElementById(output).innerHTML = '<font color="green"><b>Key:</b> </font>' + result
                       else
                           console.error(error);
                   });
