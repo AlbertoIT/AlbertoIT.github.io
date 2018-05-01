@@ -102,7 +102,7 @@
 
                   pf.linkAccount(document.getElementById("linkingKey").value, function (error, result) {
                       if (!error)
-                          document.getElementById('response').innerHTML = 'Success: check your transaction <a target="_blank" href="https://ropsten.etherscan.io/tx/' + result + '">here</a>'
+                          document.getElementById('response').innerHTML = '<font color="green">Success: check your transaction </font><a target="_blank" href="https://ropsten.etherscan.io/tx/' + result + '">here</a>'
                       else
                           console.error(error);
                   });
@@ -120,7 +120,7 @@
                 
                   pf._linkAccount(ethaddress, function (error, result) {
                       if (!error)
-                          document.getElementById(output).innerHTML = 'Success:' + result
+                          document.getElementById(output).innerHTML = '<font color="green">Key: </font>: ' + result
                       else
                           console.error(error);
                   });
@@ -133,7 +133,7 @@
 
                   pf.verifyOwnership(document.getElementById("newMail").value, function (error, result) {
                       if (!error)
-                          document.getElementById('response2').innerHTML = 'Success: check your transaction <a target="_blank" href="https://ropsten.etherscan.io/tx/' + result + '">here</a>'
+                          document.getElementById('response2').innerHTML = '<font color="green">Success: check your transaction </font><a target="_blank" href="https://ropsten.etherscan.io/tx/' + result + '">here</a>'
                       else
                           console.error(error);
                   });
@@ -146,7 +146,7 @@
 
                   pf.verifyOwnership(document.getElementById("newMail").value, function (error, result) {
                       if (!error)
-                          document.getElementById('response').innerHTML = 'Success: check your transaction <a target="_blank" href="https://ropsten.etherscan.io/tx/' + result + '">here</a>'
+                          document.getElementById('response').innerHTML = '<font color="green">Success: check your transaction </font><a target="_blank" href="https://ropsten.etherscan.io/tx/' + result + '">here</a>'
                       else
                           console.error(error);
                   });
