@@ -57,7 +57,7 @@
               <button onclick="verifyLinkAccount('response3')">see account mail</button>
               <label>
                   Eth address:
-                  <input type="text" id="ethAddress2" disabled="true"></input>
+                  <input type="text" id="ethAddress2"></input>
               </label><br><br>
               <div id="response3"></div>
               <div id="event"></div>
@@ -170,7 +170,7 @@
                       var event1;
                       for (var i = 0; i < logs.length ; i++) {
                           event1 = JSON.stringify(logs[i].args);
-                          document.getElementById("response3").innerHTML += "Proof of ownership received: " + JSON.stringify(event1) + "<br>"
+                          document.getElementById("response3").innerHTML += '<font color="green">Proof of ownership received: </font>' + JSON.stringify(event1) + '<br>'
                       }
                   });
 
