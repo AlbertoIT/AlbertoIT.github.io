@@ -8,12 +8,12 @@
           <font size="4">Instructions:<br>
 
  - Make sure to have Metamask running, connect to the Ropsten test net, create a new address<br>
- - Connect to Ropsten test net and get some ETH here to be able to interact with the smart contract: <a target="_blank" href="http://faucet.ropsten.be:3001">http://faucet.ropsten.be:3001</a><br>
- - Reload this page</font><br><br>
+ - Get some ETH here to be able to interact with the smart contract: <a target="_blank" href="http://faucet.ropsten.be:3001">http://faucet.ropsten.be:3001</a><br>
+ </font><br><br>
       </fieldset>
           <fieldset>
-              <font size="6">Step 1:</font><br>
-              <font size="4">User links his ETH address to key provided in his personal account page:</font><br><br>
+              <font size="6">(CLIENT)Step 1:</font><br>
+              <font size="4">The user links his ETH address to the key provided in his personal account page:</font><br><br>
               <button onclick="newKey()">New Key</button>
               <label>
                   Key:
@@ -26,7 +26,7 @@
 
               <button onclick="linkAccount()">Link ETH address to key</button><br>  <br>
 
-              <font size="4">After the transaction is confirmed, the user will confirm on the website he has secured his account using the key and ETH address above. Note that you can just link one ETH address to one given key.</font><br><br>
+              <font size="4">After the transaction is confirmed, the user will confirm on the website he has secured his account using the key and ETH address above.<br> Note that you can just link one ETH address to one given key and vice versa.</font><br><br>
               <font size="4">You can check if your account is linked with the key in here:</font><br><br>
               <button onclick="verifyLinkAccount('response')">See my key</button><br>
               <div id="response"></div>
@@ -37,8 +37,8 @@
 
 
           <fieldset>
-              <font size="6">Step 2:</font><br>
-              <font size="4">The account is compromised, the user prove the ownership specifying a recovery mail:</font><br><br>
+              <font size="6">(CLIENT)Step 2:</font><br>
+              <font size="4">The account is compromised, the user proves the ownership specifying a recovery mail:</font><br><br>
               <label>
                   Recovery mail:
                   <input type="text" id="newMail"></input>
@@ -49,11 +49,15 @@
           </fieldset>
 
           <fieldset>
-              <font size="6">Step 3:</font><br>
-              <font size="4">The owner of the forum checks from time to time if there are new proofs of ownership and if any account is binded with that particular key:</font><br><br>
+              <font size="6">(SERVER)Step 3:</font><br>
+              <font size="4">The owner of the service checks from time to time if there are new proofs of ownership and if any account is binded to that particular key:</font><br><br>
               <button onclick="checkOwnershipEvents()">see Proof of Ownership events</button><br><br>
               <font size="4">If there is a match get the mail where the details to recover the account will be sent:</font><br><br>
-              <button onclick="verifyLinkAccount('response3')">see account mail</button><br><br>
+              <button onclick="verifyLinkAccount('response3')">see account mail</button>
+              <label>
+                  Eth address:
+                  <input type="text" id="ethAddress2" disabled="true"></input>
+              </label><br><br>
               <div id="response3"></div>
               <div id="event"></div>
           </fieldset>
@@ -105,10 +109,15 @@
               }
               function verifyLinkAccount(output) {
                   var pf = web3.eth.contract(scAbi).at(scAddress);
-
+                  var ethaddress = '';
                   console.log('Calling the smart contract');
 
-                  pf._linkAccount(document.getElementById("ethAddress").value, function (error, result) {
+                  if (output == 'response3')
+                    ethaddress = document.getElementById("ethAddress2").value;
+                  else
+                    ethaddress = document.getElementById("ethAddress").value; 
+                
+                  pf._linkAccount(ethaddress, function (error, result) {
                       if (!error)
                           document.getElementById(output).innerHTML = 'Success:' + result
                       else
