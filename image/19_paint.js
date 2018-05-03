@@ -385,11 +385,11 @@ function packPixels(state) {
      //let targetColor = this.picture.pixel(10, 10);
   
 
-
+  stats = {};
 
    for (let y = 0; y < this.picture.height; y++) {
     for (let x = 0; x < this.picture.width; x++) {
-      var key = picture.pixel(x, y);           // filter away alpha channel
+      var key = this.picture.pixel(x, y);           // filter away alpha channel
       if (!stats[key]) stats[key] = 0;                   // init this color key
         stats[key]++ 
     }
