@@ -381,7 +381,7 @@ constructor(_, {dispatch}) {
 
 function packPixels(dispatch) {
     var canvas =  elt("canvas");   
-    drawPicture(this.picture, canvas, 1);
+    drawPicture(PictureCanvas, canvas, 1);
     var ctx = canvas.getContext('2d');    
     // get bitmap
     var idata = ctx.getImageData(0, 0, canvas.width, canvas.height),            // area to analyze
