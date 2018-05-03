@@ -380,7 +380,24 @@ constructor(_, {dispatch}) {
 }
 
 function packPixels(dispatch) {
-  alert('done!');
+    // get bitmap
+    var idata = ctx.getImageData(0, 0, this.dom.width, this.dom.height),            // area to analyze
+        buffer32 = new Uint32Array(idata.data.buffer),   // use 32-bit buffer (faster)
+        i, len = buffer32.length,
+        stats = {};
+    for(i = 0; i < len; i++) {
+      var key = "" + (buffer32[i] & 0xffffff);           // filter away alpha channel
+      if (!stats[key]) stats[key] = 0;                   // init this color key
+      stats[key]++                                       // count it..
+    }
+      
+    // convert first key:
+    var keys = Object.keys(stats),
+        count = keys.length,
+        key = keys[0]
+    var r = key & 0xff, g = (key & 0xff00)>>>8, b = (key & 0xff0000)>>>16;
+    alert("First key: " + r + "," + g + "," + b + "=" + stats[key] + 
+          "\nUnique colors: " + count);
 }
 
 var startState = {
