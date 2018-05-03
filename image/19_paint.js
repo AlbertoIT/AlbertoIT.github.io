@@ -379,9 +379,10 @@ constructor(_, {dispatch}) {
   setState() {}
 }
 
-function packPixels(dispatch) {
-    var canvas =  elt("canvas");   
-    drawPicture(PictureCanvas, canvas, 1);
+function packPixels(dispatch) {  
+    this.picture = state.picture;    
+    let canvas = elt("canvas");
+    drawPicture(this.picture, canvas, 1);    
     var ctx = canvas.getContext('2d');    
     // get bitmap
     var idata = ctx.getImageData(0, 0, canvas.width, canvas.height),            // area to analyze
