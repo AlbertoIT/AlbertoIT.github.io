@@ -406,7 +406,9 @@ var PixelPacking = class PixelPacking {
     var r, g, b;
 	
 	for (var i = 0; i < count; i++) {
-		key = keys[i];        
+		
+		key = keys[i];   
+		if (key == "#f0f0f0") continue;
 		var comp = HextoRGB(key);
 		console.log("HextoRGB: " + comp.r + " - " + comp.g + " - " + comp.b + " : " + key);
 		console.log("RGBtoHex: " + rgbToHex(comp.r, comp.g, comp.b));
