@@ -263,7 +263,6 @@ function fill({x, y}, state, dispatch) {
 }
 
 function pick(pos, state, dispatch) {
-  console.log(pos.x + " " + pos.y + " " + state.picture.pixel(pos.x, pos.y));
   dispatch({color: state.picture.pixel(pos.x, pos.y)});
 }
 
@@ -394,18 +393,42 @@ var PixelPacking = class PixelPacking {
    for (let y = 0; y < this.picture.height; y++) {
     for (let x = 0; x < this.picture.width; x++) {
       var key = this.picture.pixel(x, y);           // filter away alpha channel
-	  console.log(key);
       if (!stats[key]) stats[key] = 0;                   // init this color key
         stats[key]++ 
     }
   }
+  
+  console.clear();
     // convert first key:
-    var keys = Object.keys(stats),
-        count = keys.length,
-        key = keys[0]
-    var r = key & 0xff, g = (key & 0xff00)>>>8, b = (key & 0xff0000)>>>16;
-    alert("First key: " + r + "," + g + "," + b + "=" + stats[key] + 
+    var keys = Object.keys(stats);
+    var count = keys.length;
+    var key;
+    var r, g, b;
+	
+	for (var i = 0; i < count; i++) {
+		key = keys[i];        
+		var comp = HextoRGB(key);
+		console.log("HextoRGB: " + comp.r + " - " + comp.g + " - " + comp.b + " : " + key);
+		console.log("RGBtoHex: " + rgbToHex(comp.r, comp.g, comp.b));
+	}
+	
+    /*console.log("First key: " + r + "," + g + "," + b + "=" + stats[key] + 
           "\nUnique colors: " + count);
+		  
+	console.log(hexStringToByte("0x17"));
+	console.log(hexStringToByte("0x96"));
+	
+	var a = [];
+	
+	a.push(23);
+	a.push(150);
+	
+	console.log("byteToHexString: " + byteToHexString(a));
+	
+	console.log("RGBtoHex: " + RGBtoHex(125,126,29));
+	var comp =HextoRGB("8224285");
+	console.log("HextoRGB: " + comp.r + " - " + comp.g + " - " + comp.b);*/
+	
   }
   setState(state) { this.picture = state.picture; }
 }
@@ -437,3 +460,56 @@ function startPixelEditor({state = startState,
   });
   return app.dom;
 }
+
+function byteToHexString(uint8arr) {
+  if (!uint8arr) {
+    return '';
+  }
+  
+  var hexStr=[];
+  for (var i = 0; i < uint8arr.length; i++) {
+    var hex = (uint8arr[i] & 0xff).toString(16);
+    hex = (hex.length === 1) ? '0' + hex : hex;
+    hexStr.push("0x" + hex.toUpperCase());
+  }
+  
+  return hexStr;
+}
+
+function hexStringToByte(str) {
+  if (!str) {
+    return new Uint8Array();
+  }
+  
+  var a = [];
+  for (var i = 0, len = str.length; i < len; i+=2) {
+    a.push(parseInt(str.substr(i,2),16));
+  }
+  
+  return new Uint8Array(a);
+}
+
+
+function rgbToHex(R,G,B) {return toHex(R)+toHex(G)+toHex(B)}
+	function toHex(n) {
+	 n = parseInt(n,10);
+	 if (isNaN(n)) return "00";
+	 n = Math.max(0,Math.min(n,255));
+	 return "0123456789ABCDEF".charAt((n-n%16)/16)
+		  + "0123456789ABCDEF".charAt(n%16);
+}	
+
+
+function HextoRGB(hex){
+	var components = {
+		r: parseInt((cutHex(hex)).substring(0,2),16), 
+		g: parseInt((cutHex(hex)).substring(2,4),16), 
+		b: parseInt((cutHex(hex)).substring(4,6),16)
+	};
+	
+	return components;
+}
+
+function cutHex(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h}
+
+
