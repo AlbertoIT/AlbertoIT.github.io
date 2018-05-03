@@ -263,6 +263,7 @@ function fill({x, y}, state, dispatch) {
 }
 
 function pick(pos, state, dispatch) {
+  alert(pos);
   dispatch({color: state.picture.pixel(pos.x, pos.y)});
 }
 
