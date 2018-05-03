@@ -380,7 +380,7 @@ constructor(_, {dispatch}) {
 }
 
 function packPixels(dispatch) {
-    var canvas = document.getElementById('canvas');
+    var canvas = document.getElementByName('canvas');
     var ctx = canvas.getContext('2d');    
     // get bitmap
     var idata = ctx.getImageData(0, 0, canvas.width, canvas.height),            // area to analyze
