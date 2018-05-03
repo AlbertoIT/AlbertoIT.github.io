@@ -380,8 +380,9 @@ constructor(_, {dispatch}) {
 }
 
 function packPixels(dispatch) {
+    var ctx = PictureCanvas.getContext('2d');
     // get bitmap
-    var idata = PictureCanvas.getImageData(0, 0, PictureCanvas.width, tPictureCanvas.height),            // area to analyze
+    var idata = ctx.getImageData(0, 0, PictureCanvas.width, PictureCanvas.height),            // area to analyze
         buffer32 = new Uint32Array(idata.data.buffer),   // use 32-bit buffer (faster)
         i, len = buffer32.length,
         stats = {};
