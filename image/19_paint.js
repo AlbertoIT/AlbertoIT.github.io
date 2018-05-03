@@ -381,7 +381,7 @@ constructor(_, {dispatch}) {
 
 function packPixels(dispatch) {
     // get bitmap
-    var idata = ctx.getImageData(0, 0, this.dom.width, this.dom.height),            // area to analyze
+    var idata = PictureCanvas.getImageData(0, 0, PictureCanvas.width, tPictureCanvas.height),            // area to analyze
         buffer32 = new Uint32Array(idata.data.buffer),   // use 32-bit buffer (faster)
         i, len = buffer32.length,
         stats = {};
