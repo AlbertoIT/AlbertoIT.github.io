@@ -263,7 +263,7 @@ function fill({x, y}, state, dispatch) {
 }
 
 function pick(pos, state, dispatch) {
-  alert(pos);
+  console.log(pos.x + " " + pos.y + " " + state.picture.pixel(pos.x, pos.y));
   dispatch({color: state.picture.pixel(pos.x, pos.y)});
 }
 
@@ -373,7 +373,7 @@ var UndoButton = class UndoButton {
 
 var PixelPacking = class PixelPacking {
 constructor(state) {
-    this.picture = state.picture;
+console.log(10 + " " + 10 + " " + state.picture.pixel(10, 10));
     this.dom = elt("button", {
       onclick: () => packPixels(state)
     }, "Pack pixels");
@@ -381,44 +381,33 @@ constructor(state) {
   setState() {}
 }
 
-function packPixels(state) {  
-     //let targetColor = this.picture.pixel(10, 10);
-  
-
-  stats = {};
+var PixelPacking = class PixelPacking {
+  constructor(state) {
+    this.picture = state.picture;
+    this.dom = elt("button", {
+      onclick: () => this.save()
+    }, "🔗 Save");
+  }
+  save() {
+    var stats = {};
 
    for (let y = 0; y < this.picture.height; y++) {
     for (let x = 0; x < this.picture.width; x++) {
       var key = this.picture.pixel(x, y);           // filter away alpha channel
+	  console.log(key);
       if (!stats[key]) stats[key] = 0;                   // init this color key
         stats[key]++ 
     }
   }
-  alert("Ok");
-  
-  
-    /*this.picture = state.picture;    
-    let canvas = elt("canvas");
-    drawPicture(this.picture, canvas, 1);    
-    var ctx = canvas.getContext('2d');    
-    // get bitmap
-    var idata = ctx.getImageData(0, 0, canvas.width, canvas.height),            // area to analyze
-        buffer32 = new Uint32Array(idata.data.buffer),   // use 32-bit buffer (faster)
-        i, len = buffer32.length,
-        stats = {};
-    for(i = 0; i < len; i++) {
-      var key = "" + (buffer32[i] & 0xffffff);           // filter away alpha channel
-      if (!stats[key]) stats[key] = 0;                   // init this color key
-      stats[key]++                                       // count it..
-    }
-      
     // convert first key:
     var keys = Object.keys(stats),
         count = keys.length,
         key = keys[0]
     var r = key & 0xff, g = (key & 0xff00)>>>8, b = (key & 0xff0000)>>>16;
     alert("First key: " + r + "," + g + "," + b + "=" + stats[key] + 
-          "\nUnique colors: " + count);*/
+          "\nUnique colors: " + count);
+  }
+  setState(state) { this.picture = state.picture; }
 }
 
 var startState = {
