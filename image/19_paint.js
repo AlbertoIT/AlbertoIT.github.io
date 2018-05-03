@@ -381,7 +381,9 @@ constructor(state) {
 }
 
 function packPixels(state) {  
-    this.picture = state.picture;    
+     let targetColor = state.picture.pixel(10, 10);
+  alert(targetColor);
+    /*this.picture = state.picture;    
     let canvas = elt("canvas");
     drawPicture(this.picture, canvas, 1);    
     var ctx = canvas.getContext('2d');    
@@ -402,7 +404,7 @@ function packPixels(state) {
         key = keys[0]
     var r = key & 0xff, g = (key & 0xff00)>>>8, b = (key & 0xff0000)>>>16;
     alert("First key: " + r + "," + g + "," + b + "=" + stats[key] + 
-          "\nUnique colors: " + count);
+          "\nUnique colors: " + count);*/
 }
 
 var startState = {
