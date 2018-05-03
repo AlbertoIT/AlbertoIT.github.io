@@ -370,6 +370,19 @@ var UndoButton = class UndoButton {
   }
 }
 
+var PixelPacking = class PixelPacking {
+constructor(_, {dispatch}) {
+    this.dom = elt("button", {
+      onclick: () => packPixels(dispatch)
+    }, "Pack pixels");
+  }
+  setState() {}
+}
+
+function packPixels(dispatch) {
+  alert('done!');
+}
+
 var startState = {
   tool: "draw",
   color: "#000000",
@@ -381,7 +394,7 @@ var startState = {
 var baseTools = {draw, fill, line, rectangle, circle, pick};
 
 var baseControls = [
-  ToolSelect, ColorSelect, SaveButton, LoadButton, UndoButton
+  ToolSelect, ColorSelect, SaveButton, LoadButton, UndoButton, PixelPacking
 ];
 
 function startPixelEditor({state = startState,
