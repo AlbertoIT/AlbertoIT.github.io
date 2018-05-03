@@ -371,15 +371,16 @@ var UndoButton = class UndoButton {
 }
 
 var PixelPacking = class PixelPacking {
-constructor(_, {dispatch}) {
+constructor(state) {
+    this.picture = state.picture;
     this.dom = elt("button", {
-      onclick: () => packPixels(dispatch)
+      onclick: () => packPixels(state)
     }, "Pack pixels");
   }
   setState() {}
 }
 
-function packPixels(dispatch) {  
+function packPixels(state) {  
     this.picture = state.picture;    
     let canvas = elt("canvas");
     drawPicture(this.picture, canvas, 1);    
