@@ -382,8 +382,21 @@ constructor(state) {
 }
 
 function packPixels(state) {  
-     let targetColor = state.picture.pixel(10, 10);
-  alert(targetColor);
+     //let targetColor = this.picture.pixel(10, 10);
+  
+
+
+
+   for (let y = 0; y < this.picture.height; y++) {
+    for (let x = 0; x < this.picture.width; x++) {
+      var key = picture.pixel(x, y);           // filter away alpha channel
+      if (!stats[key]) stats[key] = 0;                   // init this color key
+        stats[key]++ 
+    }
+  }
+  alert("Ok");
+  
+  
     /*this.picture = state.picture;    
     let canvas = elt("canvas");
     drawPicture(this.picture, canvas, 1);    
