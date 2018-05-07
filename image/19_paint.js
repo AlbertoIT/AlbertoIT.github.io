@@ -422,6 +422,7 @@ var PixelPacking = class PixelPacking {
 	for (var i = 0, len = data.length; i < len; i++) {
    		bytes[i] = data.charCodeAt(i) & 0xff;
   	}
+	console.log("Raw dataUrl : " +  dataUrl);
 	console.log("PNG bytes: " +  data.length);
   	console.log("byteToHexString: " + byteToHexString(bytes));
 	  
