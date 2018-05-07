@@ -446,6 +446,9 @@ var PixelPacking = class PixelPacking {
   setState(state) { this.picture = state.picture; }
 }
 
+
+
+
 var startState = {
   tool: "draw",
   color: "#000000",
@@ -472,6 +475,12 @@ function startPixelEditor({state = startState,
     }
   });
   return app.dom;
+}
+
+function drawImageFromBytes (bytes){
+
+
+	
 }
 
 function byteToHexString(uint8arr) {
