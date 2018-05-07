@@ -413,15 +413,16 @@ var PixelPacking = class PixelPacking {
 		console.log("HextoRGB: " + comp.r + " - " + comp.g + " - " + comp.b + " : " + key);
 		console.log("RGBtoHex: " + rgbToHex(comp.r, comp.g, comp.b));
 	}
-	  //Verify we have png bytes. 
-	  let canvas = elt("canvas");
-    drawPicture(this.picture, canvas, 1);
-	  var data = atob(canvas.toDataURL().replace('data:image/png;base64,', '')),
-      bytes = new Uint8Array(data.length);
-console.log("PNG bytes: " +  data.length);
-  for (var i = 0, len = data.length; i < len; i++) {
-    bytes[i] = data.charCodeAt(i) & 0xff;
-  }
+	//Get the png bytes. 
+	let canvas = elt("canvas");
+    	drawPicture(this.picture, canvas, 1);
+	var data = atob(canvas.toDataURL().replace('data:image/png;base64,', '')),
+        bytes = new Uint8Array(data.length);
+	for (var i = 0, len = data.length; i < len; i++) {
+   		bytes[i] = data.charCodeAt(i) & 0xff;
+  	}
+	console.log("PNG bytes: " +  data.length);
+  	console.log("byteToHexString: " + byteToHexString(bytes));
 	  
 	  
     /*console.log("First key: " + r + "," + g + "," + b + "=" + stats[key] + 
