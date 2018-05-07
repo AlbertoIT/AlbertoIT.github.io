@@ -416,7 +416,8 @@ var PixelPacking = class PixelPacking {
 	//Get the png bytes. 
 	let canvas = elt("canvas");
     	drawPicture(this.picture, canvas, 1);
-	var data = atob(canvas.toDataURL().replace('data:image/png;base64,', '')),
+	var dataUrl = canvas.toDataURL();
+	var data = atob(dataUrl.replace('data:image/png;base64,', '')),
         bytes = new Uint8Array(data.length);
 	for (var i = 0, len = data.length; i < len; i++) {
    		bytes[i] = data.charCodeAt(i) & 0xff;
