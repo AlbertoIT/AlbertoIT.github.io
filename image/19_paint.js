@@ -414,17 +414,7 @@ var PixelPacking = class PixelPacking {
 		console.log("RGBtoHex: " + rgbToHex(comp.r, comp.g, comp.b));
 	}
 	//Get the png bytes. 
-	let canvas = elt("canvas");
-    	drawPicture(this.picture, canvas, 1);
-	var dataUrl = canvas.toDataURL();
-	var data = atob(dataUrl.replace('data:image/png;base64,', '')),
-        bytes = new Uint8Array(data.length);
-	for (var i = 0, len = data.length; i < len; i++) {
-   		bytes[i] = data.charCodeAt(i) & 0xff;
-  	}
-	console.log("Raw dataUrl : " +  dataUrl);
-	console.log("PNG bytes: " +  data.length);
-  	console.log("byteToHexString: " + byteToHexString(bytes));
+	getByteStringJson(this.picture);
 	  
 	  
     /*console.log("First key: " + r + "," + g + "," + b + "=" + stats[key] + 
@@ -479,6 +469,20 @@ function startPixelEditor({state = startState,
   return app.dom;
 }
 
+function getByteStringJson(picture){
+	let canvas = elt("canvas");
+    	drawPicture(picture, canvas, 1);
+	var dataUrl = canvas.toDataURL();
+	var data = atob(dataUrl.replace('data:image/png;base64,', '')),
+        bytes = new Uint8Array(data.length);
+	for (var i = 0, len = data.length; i < len; i++) {
+   		bytes[i] = data.charCodeAt(i) & 0xff;
+  	}
+	console.log("Raw dataUrl : " +  dataUrl.replace('data:image/png;base64,', ''));
+	console.log("Raw data : " +  data);
+	console.log("PNG bytes: " +  data.length);
+  	console.log("byteToHexString: " + byteToHexString(bytes));
+}
 function drawImageFromBytes (bytes){
 
 
