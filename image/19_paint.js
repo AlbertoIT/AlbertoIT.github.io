@@ -494,7 +494,14 @@ function drawImageFromBytes (picture){
    		bytes[i] = data.charCodeAt(i) & 0xff;
   	}
 	console.log("Raw data : " +  data);
-	console.log("hexStringToByte: " + hexStringToByte(byteToHexString(bytes)));
+	var dataDecoded=byteToHexString(bytes);
+	console.log("dataDecoded : " +  dataDecoded);
+	dataDecoded = dataDecoded.replace('0x','');
+	dataDecoded = dataDecoded.replace(',','');
+	console.log("dataDecoded : " +  dataDecoded);
+	console.log('Deconding');
+		
+	console.log("hexStringToByte: " + hexStringToByte(dataDecoded));
 	
 
 	
