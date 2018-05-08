@@ -370,70 +370,41 @@ var UndoButton = class UndoButton {
   }
 }
 
-var PixelPacking = class PixelPacking {
-constructor(state) {
-console.log(10 + " " + 10 + " " + state.picture.pixel(10, 10));
+var PixelUnpacking = class PixelUnpacking {
+  constructor(state, {dispatch}) {
+    this.picture = state.picture;
     this.dom = elt("button", {
-      onclick: () => packPixels(state)
-    }, "Pack pixels");
+      onclick: () => this.unpack(dispatch)
+    }, "?? Unpack");
   }
-  setState() {}
+  unpack(dispatch) {
+  
+  console.clear();
+  console.log("Begin");
+  getData(dispatch);
+	
+	
+  }
+  setState(state) { this.picture = state.picture; }
 }
 
 var PixelPacking = class PixelPacking {
-  constructor(state) {
+  constructor(state, {dispatch}) {
     this.picture = state.picture;
     this.dom = elt("button", {
-      onclick: () => this.save()
-    }, "🔗 Save");
+      onclick: () => this.save(dispatch)
+    }, "?? PixelPacking");
   }
-  save() {
-    var stats = {};
-
-   for (let y = 0; y < this.picture.height; y++) {
-    for (let x = 0; x < this.picture.width; x++) {
-      var key = this.picture.pixel(x, y);           // filter away alpha channel
-      if (!stats[key]) stats[key] = 0;                   // init this color key
-        stats[key]++ 
-    }
-  }
+  save(dispatch) {
+   
   
   console.clear();
-    // convert first key:
-    var keys = Object.keys(stats);
-    var count = keys.length;
-    var key;
-    var r, g, b;
-	
-	for (var i = 0; i < count; i++) {
-		
-		key = keys[i];   
-		if (key == "#f0f0f0") continue;
-		var comp = HextoRGB(key);
-		console.log("HextoRGB: " + comp.r + " - " + comp.g + " - " + comp.b + " : " + key);
-		console.log("RGBtoHex: " + rgbToHex(comp.r, comp.g, comp.b));
-	}
+   
 	//Get the png bytes. 
-	//getByteStringJson(this.picture);
-	  
-	drawImageFromBytes(this.picture);
-	  
-    /*console.log("First key: " + r + "," + g + "," + b + "=" + stats[key] + 
-          "\nUnique colors: " + count);
-		  
-	console.log(hexStringToByte("0x17"));
-	console.log(hexStringToByte("0x96"));
+	var bytes = getByteStringJson(this.picture);
+	console.log("To send to smrt contract: " + bytes);
 	
-	var a = [];
-	
-	a.push(23);
-	a.push(150);
-	
-	console.log("byteToHexString: " + byteToHexString(a));
-	
-	console.log("RGBtoHex: " + RGBtoHex(125,126,29));
-	var comp =HextoRGB("8224285");
-	console.log("HextoRGB: " + comp.r + " - " + comp.g + " - " + comp.b);*/
+	storeData(bytes);
 	
   }
   setState(state) { this.picture = state.picture; }
@@ -453,7 +424,7 @@ var startState = {
 var baseTools = {draw, fill, line, rectangle, circle, pick};
 
 var baseControls = [
-  ToolSelect, ColorSelect, SaveButton, LoadButton, UndoButton, PixelPacking
+  ToolSelect, ColorSelect, SaveButton, LoadButton, UndoButton, PixelPacking,PixelUnpacking
 ];
 
 function startPixelEditor({state = startState,
@@ -470,6 +441,7 @@ function startPixelEditor({state = startState,
   return app.dom;
 }
 
+//This is what i need to save from the canvas.
 function getByteStringJson(picture){
 	let canvas = elt("canvas");
     	drawPicture(picture, canvas, 1);
@@ -479,26 +451,59 @@ function getByteStringJson(picture){
 	for (var i = 0, len = data.length; i < len; i++) {
    		bytes[i] = data.charCodeAt(i) & 0xff;
   	}
-	console.log("Raw dataUrl : " +  dataUrl.replace('data:image/png;base64,', ''));
-	console.log("Raw data : " +  data);
-	console.log("PNG bytes: " +  data.length);
-  	console.log("byteToHexString: " + byteToHexString(bytes));
-}
-function drawImageFromBytes (picture){
-	let canvas = elt("canvas");
-    	drawPicture(picture, canvas, 1);
-	var dataUrl = canvas.toDataURL();
-	var data = atob(dataUrl.replace('data:image/png;base64,', '')),
-        bytes = new Uint8Array(data.length);
-	for (var i = 0, len = data.length; i < len; i++) {
-   		bytes[i] = data.charCodeAt(i) & 0xff;
-  	}
-	console.log("Raw data : " +  data);
-	var dataDecoded=byteToHexString(bytes);
-	console.log("hexStringToByte: " + hexStringToByte(dataDecoded));	
-	
 
+	return byteToHexString(bytes);
+}
+
+//This is what i need to draw to the canvas starting from the bytes.
+function drawImageFromBytes(bytes){
 	
+    var i = bytes.length;
+    var binaryString = [i];
+    while (i--) {
+        binaryString[i] = String.fromCharCode(bytes[i]);
+    }
+	
+	var data = binaryString.join('');
+
+    var base64 = window.btoa(data);
+	
+	
+	return dataURItoBlob('data:image/png;base64,' + base64);
+}
+
+function strEncodeUTF16(str) {
+  var buf = new ArrayBuffer(str.length*2);
+  var bufView = new Uint16Array(buf);
+  for (var i=0, strLen=str.length; i < strLen; i++) {
+    bufView[i] = str.charCodeAt(i)
+  }
+  return bufView;
+}
+
+function dataURItoBlob(dataURI) {
+  // convert base64 to raw binary data held in a string
+  // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
+  var byteString = atob(dataURI.split(',')[1]);
+
+  // separate out the mime component
+  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+  // write the bytes of the string to an ArrayBuffer
+  var ab = new ArrayBuffer(byteString.length);
+
+  // create a view into the buffer
+  var ia = new Uint8Array(ab);
+
+  // set the bytes of the buffer to the correct values
+  for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+  }
+
+  // write the ArrayBuffer to a blob, and you're done
+  var blob = new Blob([ab], {type: mimeString});
+  return blob;
+
 }
 
 function byteToHexString(uint8arr) {
@@ -507,13 +512,32 @@ function byteToHexString(uint8arr) {
   }
   
   var hexStr=[];
+  var byteString = '0x';
   for (var i = 0; i < uint8arr.length; i++) {
     var hex = (uint8arr[i] & 0xff).toString(16);
     hex = (hex.length === 1) ? '0' + hex : hex;
-    hexStr.push("0x" + hex.toUpperCase());
+      //hexStr.push('"0x' + hex.toUpperCase() + '"');
+    hexStr.push(hex.toUpperCase());
+    byteString +=hex.toUpperCase();
   }
   
-  return hexStr;
+    //return '[' + hexStr + ']';
+  return byteString;
+}
+//'0x89504e470d0a1a0a0000000d494844520000003c0000001e080600000070987d4f00000053494441545847edd4011100200cc430f06f760e40000e4a70c0a7b73d33677df4b60fc7b509c7811761c2b105241d037dbe4398706c0149c7401d2d494b3ab680a463a0aeb4a4251d5b40d23150575ad2f5a42f4d827261fa56bcfc0000000049454e44ae426082';
+function formatByteStringFromSmartContract(byteString){
+	//var arratyByteString = smartContractByteString.match(/.{1,2}/g);
+	var arrayByteString = [];
+
+	for (var i = 0, charsLength = byteString.length; i < charsLength; i += 2) {
+		var singleByte = byteString.substring(i, i + 2);
+		
+		if (singleByte != '0x'){
+			arrayByteString.push("0x" + singleByte.toUpperCase());
+		}
+	}
+
+	return arrayByteString;
 }
 
 function hexStringToByte(str) {
@@ -551,5 +575,78 @@ function HextoRGB(hex){
 }
 
 function cutHex(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h}
+
+//SMART CONTRACT COMMUNICATION
+
+var stroreSCAddress = '0xd63f7d0c9f7f0f1d52a7aac081c99df030e2d093';
+var abi = [{"constant":false,"inputs":[{"name":"enterBytes","type":"bytes"}],"name":"setInput","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"input","outputs":[{"name":"","type":"bytes"}],"payable":false,"stateMutability":"view","type":"function"}];
+
+  // MetaMask injects the web3 library for us.
+    window.onload = function() {
+      if (typeof web3 === 'undefined') {
+        document.getElementById('meta-mask-required').innerHTML = 'You need <a href="https://metamask.io/">MetaMask</a> browser plugin to run this example'
+      }
+
+      //drawCanvas();
+    }
+
+function storeData(data) {
+	
+	var storeSC = web3.eth.contract(abi).at(stroreSCAddress);
+
+	console.log('Calling the smart contract');	
+	
+	//data = '0x89504e470d0a1a0a0000000d494844520000003c0000001e080600000070987d4f00000156494441545847ed98590ec3200c44931b70ff53fa06adf840b21cc0631b932ee95fc5123fcf30a43d89e875fcd1e77c807f5ced47e11d0297522e8f21a21d8f3eb62adc407b70bc0999f05b8067a03d59adf32dd648058e149ea5780a700454aa25cf7bd4eecb8157c266d87d19b0b4606612479aea024660ea1c6e3ff9dd12342b95568111b851410870e48c7a9a38048ed8a636006d142f1a5dd31abc1c389a88886d67d70fd2742bf4d4d2d6cd1040c4fe7c8e5683362e9f773bb0567074fc01d6fe00d03aecb5710bb6594e6c3fc33c6d3d01d64bddba67db4b6ba6368e34cd64696ffccf94b1fc28b80d18551a85590982ecc55556dfb4e415c12d898e79e721c72815b867718baa6d3d02829ecf2dc0f2d5319ab4a3a4476090396e4bcf7eb58c8a46d5b4be81a10e70a574e4ae8dacd5d4d3c67bcf368556a478efdad115e781ad357c3cb0cc0bde38cf71f90a60af3b7aebde6ad67170c48934a80000000049454e44ae426082';
+
+	storeSC.setInput(data, function (error, result) {
+		if (!error)
+			document.getElementById('result').innerHTML = 'Success:' + result
+		else
+			console.error(error);
+	});
+}
+
+function getData(dispatch) {
+	
+	var storeSC = web3.eth.contract(abi).at(stroreSCAddress);
+
+	console.log('Calling the smart contract');
+
+	var getNumbers;
+
+	storeSC.input(function (error, result) {
+		if (!error) {
+
+			//To retrieve from the smart contrqact
+		    //var smartContractByteString= '0x89504e470d0a1a0a0000000d494844520000003c0000001e080600000070987d4f00000156494441545847ed98590ec3200c44931b70ff53fa06adf840b21cc0631b932ee95fc5123fcf30a43d89e875fcd1e77c807f5ced47e11d0297522e8f21a21d8f3eb62adc407b70bc0999f05b8067a03d59adf32dd648058e149ea5780a700454aa25cf7bd4eecb8157c266d87d19b0b4606612479aea024660ea1c6e3ff9dd12342b95568111b851410870e48c7a9a38048ed8a636006d142f1a5dd31abc1c389a88886d67d70fd2742bf4d4d2d6cd1040c4fe7c8e5683362e9f773bb0567074fc01d6fe00d03aecb5710bb6594e6c3fc33c6d3d01d64bddba67db4b6ba6368e34cd64696ffccf94b1fc28b80d18551a85590982ecc55556dfb4e415c12d898e79e721c72815b867718baa6d3d02829ecf2dc0f2d5319ab4a3a4476090396e4bcf7eb58c8a46d5b4be81a10e70a574e4ae8dacd5d4d3c67bcf368556a478efdad115e781ad357c3cb0cc0bde38cf71f90a60af3b7aebde6ad67170c48934a80000000049454e44ae426082';
+		    var smartContractByteString= result;
+			var bytes = formatByteStringFromSmartContract(smartContractByteString);
+			
+			//console.log(bytes);
+			var file = drawImageFromBytes(bytes);
+			
+			
+			
+			console.log(file);
+			if (file == null) return;
+			  let reader = new FileReader();
+			  reader.addEventListener("load", () => {
+				let image = elt("img", {
+				  onload: () => dispatch({
+					picture: pictureFromImage(image)
+				  }),
+				  src: reader.result
+				});
+			  });
+		  reader.readAsDataURL(file);
+		
+
+			document.getElementById('result').innerHTML = "Result: " + result
+		}
+		else
+			console.error(error);
+	});
+
+}
 
 
