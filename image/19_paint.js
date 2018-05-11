@@ -580,7 +580,7 @@ function cutHex(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h}
 
 //var stroreSCAddress = '0xd63f7d0c9f7f0f1d52a7aac081c99df030e2d093';
 //var abi = [{"constant":false,"inputs":[{"name":"enterBytes","type":"bytes"}],"name":"setInput","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"input","outputs":[{"name":"","type":"bytes"}],"payable":false,"stateMutability":"view","type":"function"}];
-var stroreSCAddress = '0xd891789d0cb446a502e99f1e0a1640867b17904d';
+var stroreSCAddress = '0xd1babbb97ee255198d0065865e3c23698172ce47';
 var abi = [{"constant":true,"inputs":[],"name":"height","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"Y","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"width","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"X","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"enterBytes","type":"bytes"}],"name":"setInput","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"input","outputs":[{"name":"","type":"bytes"}],"payable":false,"stateMutability":"view","type":"function"}];
 
   // MetaMask injects the web3 library for us.
