@@ -1,0 +1,35 @@
+<html>
+<header>
+<script src="lib/RGraph.common.core.js"></script>
+<script src="lib/RGraph.common.csv.js"></script>
+<script src="lib/RGraph.bipolar.js"></script>
+</header>
+    <body>
+
+<canvas id="cvs" width="500" height="250">
+    [No canvas support]
+</canvas>
+<script>
+    window.onload = function ()
+    {
+        new RGraph.CSV('data.csv', function (csv)
+        {
+            // Fetch the first three columns to use as labels and the left/right data
+            var labels = csv.getCol(0);
+            //var left   = csv.getCol(1);
+            var right  = csv.getCol(1);
+            
+            var bipolar = new RGraph.Bipolar({
+                id: 'cvs',
+                left: left,
+                options: {
+                    textAccessible: true,
+                    labels:  labels
+                }
+            }).draw();
+        });
+    };
+</script>
+
+    </body>
+</html>
