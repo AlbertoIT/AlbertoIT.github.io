@@ -10,26 +10,27 @@
     [No canvas support]
 </canvas>
 <script>
-    window.onload = function ()
-    {
-        new RGraph.CSV('data.csv', function (csv)
+        window.onload = function ()
         {
-            // Fetch the first three columns to use as labels and the left/right data
-            var labels = csv.getCol(0);
-            //var left   = csv.getCol(1);
-            var right  = csv.getCol(1);
-            
-            var bipolar = new RGraph.Bipolar({
-                id: 'cvs',
-                right: right,
-                options: {
-                    textAccessible: true,
-                    labels:  labels
-                }
-            }).draw();
-        });
-    };
-</script>
+            new RGraph.CSV('sample.csv', function (csv)
+            {
+                // Fetch the first three columns to use as labels and the left/right data
+                var labels = csv.getCol(0);
+                var left   = csv.getCol(1);
+                var right  = csv.getCol(2);
+                
+                var bipolar = new RGraph.Bipolar({
+                    id: 'cvs',
+                    left: left,
+                    right: right,
+                    options: {
+                        textAccessible: true,
+                        labels:  labels
+                    }
+                }).draw();
+            })
+        };
+    </script>
 
     </body>
 </html>
