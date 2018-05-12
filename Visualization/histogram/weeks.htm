@@ -119,8 +119,8 @@ d3.tsv("data.tsv", type, function(error, data) {
       .attr("class", "bar")
       .attr("x", function(d) { return x(d.letter); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.frequency/10000); })
-      .attr("height", function(d) { return height - y(d.frequency/10000); })
+      .attr("y", function(d) { return y(d.frequency/13000); })
+      .attr("height", function(d) { return height - y(d.frequency/13000); })
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
 
