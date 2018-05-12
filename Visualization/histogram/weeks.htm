@@ -103,8 +103,8 @@ d3.tsv("data.tsv", type, function(error, data) {
       .call(xAxis)
   .selectAll("text")
     .attr("x", 9)
-    .attr("transform", "rotate(90)")
-  .style("text-anchor", "start");
+    .attr("y", 0)
+    .attr("transform", "rotate(90)");
 
   svg.append("g")
       .attr("class", "y axis")
