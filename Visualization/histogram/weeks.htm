@@ -101,6 +101,9 @@ d3.tsv("data.tsv", type, function(error, data) {
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
+  .selectAll("text")
+    .attr("transform", "rotate(90)")
+    .style("text-anchor", "start");
 
   svg.append("g")
       .attr("class", "y axis")
