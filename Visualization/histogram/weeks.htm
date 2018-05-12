@@ -96,7 +96,7 @@ svg.call(tip);
 
 d3.tsv("data.tsv", type, function(error, data) {
   x.domain(data.map(function(d) { return d.letter; }));
-  y.domain([0, d3.max(data, function(d) { return d.frequency/13000; })]);
+  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
 
   svg.append("g")
       .attr("class", "x axis")
@@ -119,8 +119,8 @@ d3.tsv("data.tsv", type, function(error, data) {
       .attr("class", "bar")
       .attr("x", function(d) { return x(d.letter); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.frequency/13000); })
-      .attr("height", function(d) { return height - y(d.frequency/13000); })
+      .attr("y", function(d) { return y(d.frequency); })
+      .attr("height", function(d) { return height - y(d.frequency); })
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
 
