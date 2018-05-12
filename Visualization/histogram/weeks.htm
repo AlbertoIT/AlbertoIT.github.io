@@ -87,7 +87,7 @@ var tip = d3.tip()
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("height", height + margin.top + margin.bottom + 100)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -102,8 +102,7 @@ d3.tsv("data.tsv", type, function(error, data) {
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
   .selectAll("text")
-    .attr("transform", "rotate(90)")
-    .style("text-anchor", "start");
+    .attr("transform", "rotate(90)");
 
   svg.append("g")
       .attr("class", "y axis")
