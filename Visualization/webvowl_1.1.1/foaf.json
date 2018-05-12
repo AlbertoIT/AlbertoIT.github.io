@@ -880,10 +880,10 @@
       },
       "label": {
         "IRI-based": "OnlineGamingAccount",
-        "undefined": "Online Gaming Account"
+        "undefined": "Online Gaming Account OOOOOOOOOO"
       },
       "comment": {
-        "undefined": "An online gaming account."
+        "undefined": "An online gaming account MMMMMMM."
       },
       "id": "73",
       "superClasses": [
