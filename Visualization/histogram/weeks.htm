@@ -96,7 +96,7 @@ svg.call(tip);
 
 d3.tsv("data.tsv", type, function(error, data) {
   x.domain(data.map(function(d) { return d.letter; }));
-  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+  y.domain([0, d3.max(data, function(d) { return d.frequency/13000; })]);
 
   svg.append("g")
       .attr("class", "x axis")
