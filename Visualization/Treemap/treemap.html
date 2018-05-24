@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
-<html class="ocks-org do-not-copy">
+<html>
 <meta charset="utf-8">
 <title>Zoomable Treemaps</title>
 <style>
 
-@import url(style.css?aea6f0a);
+@import url(style.css);
 
 #chart {
   width: 960px;
@@ -56,8 +56,7 @@ rect.parent,
 </style>
 
 <header>
-  <aside>June 8, 2012</aside>
-  <a href="../" rel="author">Mike Bostock</a>
+  
 </header>
 
 <h1>Zoomable Treemaps</h1>
@@ -74,10 +73,6 @@ rect.parent,
 
 <p>This visualization is implemented in <a href="http://d3js.org">D3.js</a>, based on an <a href="http://mbostock.github.com/d3/talk/20111018/treemap.html">earlier version</a> from my talk at SVG Open. Also see Nicolas Garcia Belmonte’s zoomable treemap of <a href="http://thejit.org/static/v20/Jit/Examples/Treemap/example1.html">music albums</a>, and The New York Times’ free-form zooming for <a href="http://www.nytimes.com/packages/html/newsgraphics/2011/0119-budget/">Obama’s 2012 budget proposal</a>. Note the subtle differences in behavior!
 
-<footer>
-  <aside>June 8, 2012</aside>
-  <a href="../" rel="author">Mike Bostock</a>
-</footer>
 
 <script src="d3.v3.min.js" charset="utf-8"></script></script>
 <script>
@@ -248,12 +243,5 @@ d3.json("flare.json", function(root) {
         : d.name;
   }
 });
-
-</script>
-<script>
-
-GoogleAnalyticsObject = "ga", ga = function() { ga.q.push(arguments); }, ga.q = [], ga.l = +new Date;
-ga("create", "UA-48272912-3", "ocks.org");
-ga("send", "pageview");
 
 </script>
