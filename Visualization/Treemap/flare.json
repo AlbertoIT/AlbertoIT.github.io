@@ -7,294 +7,294 @@
 {
 "name":  "Русский (Russian)",
 "children": [
-{"name":  "xandry" , "size": 67},
-{"name":  "Ranyar" , "size": 13},
-{"name":  "upline" , "size": 10},
-{"name":  "Vadi2323" , "size": 10},
-{"name":  "hanspeter77" , "size": 10},
-{"name":  "qtypatuty" , "size": 10},
-{"name":  "loremipsum" , "size": 8},
-{"name":  "Hanna_Money" , "size": 6},
-{"name":  "oxilore" , "size": 5},
-{"name":  "grchina" , "size": 5}
+{"name":  "xandry" , "value": 67},
+{"name":  "Ranyar" , "value": 13},
+{"name":  "upline" , "value": 10},
+{"name":  "Vadi2323" , "value": 10},
+{"name":  "hanspeter77" , "value": 10},
+{"name":  "qtypatuty" , "value": 10},
+{"name":  "loremipsum" , "value": 8},
+{"name":  "Hanna_Money" , "value": 6},
+{"name":  "oxilore" , "value": 5},
+{"name":  "grchina" , "value": 5}
 ]
 },
 {
 "name":  "Türkçe (Turkish)",
 "children": [
-{"name":  "EFS" , "size": 150},
-{"name":  "Cean" , "size": 82},
-{"name":  "Mysbanickma" , "size": 40},
-{"name":  "Neo--" , "size": 36},
-{"name":  "fortunecrypto" , "size": 26},
-{"name":  "Leonbtc" , "size": 20},
-{"name":  "Daffadile" , "size": 20},
-{"name":  "teramit" , "size": 17},
-{"name":  "atheist13" , "size": 17},
-{"name":  "Matthias9515" , "size": 14}
+{"name":  "EFS" , "value": 150},
+{"name":  "Cean" , "value": 82},
+{"name":  "Mysbanickma" , "value": 40},
+{"name":  "Neo--" , "value": 36},
+{"name":  "fortunecrypto" , "value": 26},
+{"name":  "Leonbtc" , "value": 20},
+{"name":  "Daffadile" , "value": 20},
+{"name":  "teramit" , "value": 17},
+{"name":  "atheist13" , "value": 17},
+{"name":  "Matthias9515" , "value": 14}
 ]
 },
 {
 "name":  "Bahasa Indonesia (Indonesian)",
 "children": [
-{"name":  "dbshck" , "size": 640},
-{"name":  "BitRentX" , "size": 239},
-{"name":  "pandukelana2712" , "size": 118},
-{"name":  "joniboini" , "size": 106},
-{"name":  "roycilik" , "size": 71},
-{"name":  "QuestionAuthority" , "size": 70},
-{"name":  "grandFX" , "size": 62},
-{"name":  "numanoid" , "size": 57},
-{"name":  "CasinoBetGame" , "size": 52},
-{"name":  "flyer88" , "size": 50}
+{"name":  "dbshck" , "value": 640},
+{"name":  "BitRentX" , "value": 239},
+{"name":  "pandukelana2712" , "value": 118},
+{"name":  "joniboini" , "value": 106},
+{"name":  "roycilik" , "value": 71},
+{"name":  "QuestionAuthority" , "value": 70},
+{"name":  "grandFX" , "value": 62},
+{"name":  "numanoid" , "value": 57},
+{"name":  "CasinoBetGame" , "value": 52},
+{"name":  "flyer88" , "value": 50}
 ]
 },
 {
 "name":  "Hrvatski (Croatian)",
 "children": [
-{"name":  "RegulusHr" , "size": 79},
-{"name":  "korni74" , "size": 58},
-{"name":  "I.Grozni" , "size": 29},
-{"name":  "Trofo" , "size": 22},
-{"name":  "Daniel91" , "size": 21},
-{"name":  "slackovic" , "size": 20},
-{"name":  "Clifmeister" , "size": 16},
-{"name":  "free-bit.co.in" , "size": 14},
-{"name":  "zikabra" , "size": 12},
-{"name":  "Mi5h0" , "size": 11}
+{"name":  "RegulusHr" , "value": 79},
+{"name":  "korni74" , "value": 58},
+{"name":  "I.Grozni" , "value": 29},
+{"name":  "Trofo" , "value": 22},
+{"name":  "Daniel91" , "value": 21},
+{"name":  "slackovic" , "value": 20},
+{"name":  "Clifmeister" , "value": 16},
+{"name":  "free-bit.co.in" , "value": 14},
+{"name":  "zikabra" , "value": 12},
+{"name":  "Mi5h0" , "value": 11}
 ]
 },
 {
 "name":  "Deutsch (German)",
 "children": [
-{"name":  "qwk" , "size": 266},
-{"name":  "phantastisch" , "size": 97},
-{"name":  "shorena" , "size": 95},
-{"name":  "Bitze" , "size": 60},
-{"name":  "Buchi-88" , "size": 29},
-{"name":  "twbt" , "size": 28},
-{"name":  "d5000" , "size": 24},
-{"name":  "FlensGold" , "size": 20},
-{"name":  "Acura3600" , "size": 20},
-{"name":  "fronti" , "size": 17}
+{"name":  "qwk" , "value": 266},
+{"name":  "phantastisch" , "value": 97},
+{"name":  "shorena" , "value": 95},
+{"name":  "Bitze" , "value": 60},
+{"name":  "Buchi-88" , "value": 29},
+{"name":  "twbt" , "value": 28},
+{"name":  "d5000" , "value": 24},
+{"name":  "FlensGold" , "value": 20},
+{"name":  "Acura3600" , "value": 20},
+{"name":  "fronti" , "value": 17}
 ]
 },
 {
 "name":  "日本語 (Japanese)",
 "children": [
-{"name":  "Anon11073" , "size": 69},
-{"name":  "nanna" , "size": 37},
-{"name":  "dazuixia456" , "size": 36},
-{"name":  "Bouriffe" , "size": 12},
-{"name":  "zaq130" , "size": 12},
-{"name":  "jack long" , "size": 5},
-{"name":  "equator" , "size": 2},
-{"name":  "Noidor" , "size": 2},
-{"name":  "Tamak" , "size": 2},
-{"name":  "seedone1122" , "size": 2}
+{"name":  "Anon11073" , "value": 69},
+{"name":  "nanna" , "value": 37},
+{"name":  "dazuixia456" , "value": 36},
+{"name":  "Bouriffe" , "value": 12},
+{"name":  "zaq130" , "value": 12},
+{"name":  "jack long" , "value": 5},
+{"name":  "equator" , "value": 2},
+{"name":  "Noidor" , "value": 2},
+{"name":  "Tamak" , "value": 2},
+{"name":  "seedone1122" , "value": 2}
 ]
 },
 {
 "name":  "Română (Romanian)",
 "children": [
-{"name":  "Martisor-Sobru" , "size": 15},
-{"name":  "wickedsick" , "size": 5},
-{"name":  "Nea Sandu" , "size": 5},
-{"name":  "Rakabel619" , "size": 5},
-{"name":  "NeuroticFish" , "size": 3},
-{"name":  "1667928" , "size": 3},
-{"name":  "Saruman" , "size": 3},
-{"name":  "sparg" , "size": 3},
-{"name":  "SergiuHD" , "size": 3},
-{"name":  "HBKMusiK" , "size": 2}
+{"name":  "Martisor-Sobru" , "value": 15},
+{"name":  "wickedsick" , "value": 5},
+{"name":  "Nea Sandu" , "value": 5},
+{"name":  "Rakabel619" , "value": 5},
+{"name":  "NeuroticFish" , "value": 3},
+{"name":  "1667928" , "value": 3},
+{"name":  "Saruman" , "value": 3},
+{"name":  "sparg" , "value": 3},
+{"name":  "SergiuHD" , "value": 3},
+{"name":  "HBKMusiK" , "value": 2}
 ]
 },
 {
 "name":  "Philippines",
 "children": [
-{"name":  "fortunecrypto" , "size": 124},
-{"name":  "iTradeChips" , "size": 60},
-{"name":  "Cazkys" , "size": 50},
-{"name":  "aces777" , "size": 25},
-{"name":  "IntelligentIdiot" , "size": 24},
-{"name":  "CARrency" , "size": 22},
-{"name":  "HEvangelista" , "size": 21},
-{"name":  "ximply" , "size": 20},
-{"name":  "Tamilson" , "size": 20},
-{"name":  "Achargeturry78" , "size": 16}
+{"name":  "fortunecrypto" , "value": 124},
+{"name":  "iTradeChips" , "value": 60},
+{"name":  "Cazkys" , "value": 50},
+{"name":  "aces777" , "value": 25},
+{"name":  "IntelligentIdiot" , "value": 24},
+{"name":  "CARrency" , "value": 22},
+{"name":  "HEvangelista" , "value": 21},
+{"name":  "ximply" , "value": 20},
+{"name":  "Tamilson" , "value": 20},
+{"name":  "Achargeturry78" , "value": 16}
 ]
 },
 {
 "name":  "Other languages/locations",
 "children": [
-{"name":  "Waztim" , "size": 50},
-{"name":  "Iet7joo4" , "size": 27},
-{"name":  "gidlark1" , "size": 21},
-{"name":  "Chainsmokers" , "size": 20},
-{"name":  "btmtb" , "size": 19},
-{"name":  "MadeInUkraine" , "size": 13},
-{"name":  "LsL" , "size": 13},
-{"name":  "hannusolo" , "size": 11},
-{"name":  "zdeni82" , "size": 10},
-{"name":  "Flodner" , "size": 8}
+{"name":  "Waztim" , "value": 50},
+{"name":  "Iet7joo4" , "value": 27},
+{"name":  "gidlark1" , "value": 21},
+{"name":  "Chainsmokers" , "value": 20},
+{"name":  "btmtb" , "value": 19},
+{"name":  "MadeInUkraine" , "value": 13},
+{"name":  "LsL" , "value": 13},
+{"name":  "hannusolo" , "value": 11},
+{"name":  "zdeni82" , "value": 10},
+{"name":  "Flodner" , "value": 8}
 ]
 },
 {
 "name":  "India",
 "children": [
-{"name":  "botany" , "size": 24},
-{"name":  "lordquanta" , "size": 12},
-{"name":  "stingers" , "size": 12},
-{"name":  "amishmanish" , "size": 7},
-{"name":  "2000084" , "size": 3},
-{"name":  "legendster" , "size": 2},
-{"name":  "Joel_Jantsen" , "size": 2},
-{"name":  "polynesia" , "size": 2},
-{"name":  "newinbtc" , "size": 2},
-{"name":  "deadley" , "size": 1}
+{"name":  "botany" , "value": 24},
+{"name":  "lordquanta" , "value": 12},
+{"name":  "stingers" , "value": 12},
+{"name":  "amishmanish" , "value": 7},
+{"name":  "2000084" , "value": 3},
+{"name":  "legendster" , "value": 2},
+{"name":  "Joel_Jantsen" , "value": 2},
+{"name":  "polynesia" , "value": 2},
+{"name":  "newinbtc" , "value": 2},
+{"name":  "deadley" , "value": 1}
 ]
 },
 {
 "name":  "Português (Portuguese)",
 "children": [
-{"name":  "sabotag3x" , "size": 81},
-{"name":  "lcharles123" , "size": 79},
-{"name":  "Loganota" , "size": 71},
-{"name":  "u9y42" , "size": 60},
-{"name":  "EbonHawk" , "size": 54},
-{"name":  "Paredao" , "size": 48},
-{"name":  "alexrossi" , "size": 40},
-{"name":  "girino" , "size": 32},
-{"name":  "AndersonFG" , "size": 28},
-{"name":  "arthurbonora" , "size": 27}
+{"name":  "sabotag3x" , "value": 81},
+{"name":  "lcharles123" , "value": 79},
+{"name":  "Loganota" , "value": 71},
+{"name":  "u9y42" , "value": 60},
+{"name":  "EbonHawk" , "value": 54},
+{"name":  "Paredao" , "value": 48},
+{"name":  "alexrossi" , "value": 40},
+{"name":  "girino" , "value": 32},
+{"name":  "AndersonFG" , "value": 28},
+{"name":  "arthurbonora" , "value": 27}
 ]
 },
 {
 "name":  "Italiano (Italian)",
 "children": [
-{"name":  "Micio" , "size": 210},
-{"name":  "redsn0w" , "size": 87},
-{"name":  "babo" , "size": 83},
-{"name":  "Karasugoi" , "size": 52},
-{"name":  "Ale88" , "size": 37},
-{"name":  "duesoldi" , "size": 30},
-{"name":  "Grafschmidt" , "size": 27},
-{"name":  "alexrossi" , "size": 21},
-{"name":  "Biodom" , "size": 21},
-{"name":  "wenwen478" , "size": 20}
+{"name":  "Micio" , "value": 210},
+{"name":  "redsn0w" , "value": 87},
+{"name":  "babo" , "value": 83},
+{"name":  "Karasugoi" , "value": 52},
+{"name":  "Ale88" , "value": 37},
+{"name":  "duesoldi" , "value": 30},
+{"name":  "Grafschmidt" , "value": 27},
+{"name":  "alexrossi" , "value": 21},
+{"name":  "Biodom" , "value": 21},
+{"name":  "wenwen478" , "value": 20}
 ]
 },
 {
 "name":  "Polski",
 "children": [
-{"name":  "malevolent" , "size": 49},
-{"name":  "XbladeX" , "size": 30},
-{"name":  "pawel7777" , "size": 8},
-{"name":  "sud" , "size": 6},
-{"name":  "dwminer1" , "size": 5},
-{"name":  "qwertylolxd" , "size": 4},
-{"name":  "tongokongo" , "size": 3},
-{"name":  "trademaniac" , "size": 3},
-{"name":  "Janush1" , "size": 3},
-{"name":  "szafa" , "size": 2}
+{"name":  "malevolent" , "value": 49},
+{"name":  "XbladeX" , "value": 30},
+{"name":  "pawel7777" , "value": 8},
+{"name":  "sud" , "value": 6},
+{"name":  "dwminer1" , "value": 5},
+{"name":  "qwertylolxd" , "value": 4},
+{"name":  "tongokongo" , "value": 3},
+{"name":  "trademaniac" , "value": 3},
+{"name":  "Janush1" , "value": 3},
+{"name":  "szafa" , "value": 2}
 ]
 },
 {
 "name":  "Español (Spanish)",
 "children": [
-{"name":  "paxmao" , "size": 84},
-{"name":  "vingaard" , "size": 40},
-{"name":  "MA40" , "size": 14},
-{"name":  "Gothorum" , "size": 13},
-{"name":  "EcuaMobi" , "size": 10},
-{"name":  "d5000" , "size": 7},
-{"name":  "axiline" , "size": 7},
-{"name":  "hugeblack" , "size": 6},
-{"name":  "mo" , "size": 4},
-{"name":  "PeekPoke" , "size": 3}
+{"name":  "paxmao" , "value": 84},
+{"name":  "vingaard" , "value": 40},
+{"name":  "MA40" , "value": 14},
+{"name":  "Gothorum" , "value": 13},
+{"name":  "EcuaMobi" , "value": 10},
+{"name":  "d5000" , "value": 7},
+{"name":  "axiline" , "value": 7},
+{"name":  "hugeblack" , "value": 6},
+{"name":  "mo" , "value": 4},
+{"name":  "PeekPoke" , "value": 3}
 ]
 },
 {
 "name":  "العربية (Arabic)",
 "children": [
-{"name":  "OmegaStarScream" , "size": 52},
-{"name":  "SyGambler" , "size": 29},
-{"name":  "BorisBritvaHrenPopadesh" , "size": 29},
-{"name":  "LBX" , "size": 26},
-{"name":  "Sir Paijoe" , "size": 9},
-{"name":  "1776842" , "size": 3},
-{"name":  "MiiDoViic" , "size": 3},
-{"name":  "khaled0111" , "size": 2},
-{"name":  "manbago" , "size": 2},
-{"name":  "harmony225" , "size": 2}
+{"name":  "OmegaStarScream" , "value": 52},
+{"name":  "SyGambler" , "value": 29},
+{"name":  "BorisBritvaHrenPopadesh" , "value": 29},
+{"name":  "LBX" , "value": 26},
+{"name":  "Sir Paijoe" , "value": 9},
+{"name":  "1776842" , "value": 3},
+{"name":  "MiiDoViic" , "value": 3},
+{"name":  "khaled0111" , "value": 2},
+{"name":  "manbago" , "value": 2},
+{"name":  "harmony225" , "value": 2}
 ]
 },
 {
 "name":  "Français",
 "children": [
-{"name":  "Irlasos" , "size": 1},
-{"name":  "Bigpiggy01" , "size": 1}
+{"name":  "Irlasos" , "value": 1},
+{"name":  "Bigpiggy01" , "value": 1}
 ]
 },
 {
 "name":  "Nederlands (Dutch)",
 "children": [
-{"name":  "Jansen227" , "size": 24},
-{"name":  "BioMike" , "size": 24},
-{"name":  "RJX" , "size": 8},
-{"name":  "TheNewAnon135246" , "size": 8},
-{"name":  "friends1980" , "size": 6},
-{"name":  "Cloverfield" , "size": 6},
-{"name":  "Mitchell" , "size": 5},
-{"name":  "Aura" , "size": 4},
-{"name":  "klaaas" , "size": 4},
-{"name":  "DikkieD" , "size": 3}
+{"name":  "Jansen227" , "value": 24},
+{"name":  "BioMike" , "value": 24},
+{"name":  "RJX" , "value": 8},
+{"name":  "TheNewAnon135246" , "value": 8},
+{"name":  "friends1980" , "value": 6},
+{"name":  "Cloverfield" , "value": 6},
+{"name":  "Mitchell" , "value": 5},
+{"name":  "Aura" , "value": 4},
+{"name":  "klaaas" , "value": 4},
+{"name":  "DikkieD" , "value": 3}
 ]
 },
 {
 "name":  "中文 (Chinese)",
 "children": [
-{"name":  "Barcode_" , "size": 68},
-{"name":  "hdd3go" , "size": 53},
-{"name":  "xzhybbs" , "size": 49},
-{"name":  "whisee" , "size": 44},
-{"name":  "shazhuogzrby734" , "size": 38},
-{"name":  "zcxvp" , "size": 35},
-{"name":  "mo" , "size": 27},
-{"name":  "moxl" , "size": 23},
-{"name":  "EmilioMann" , "size": 20},
-{"name":  "smartcrypto" , "size": 18}
+{"name":  "Barcode_" , "value": 68},
+{"name":  "hdd3go" , "value": 53},
+{"name":  "xzhybbs" , "value": 49},
+{"name":  "whisee" , "value": 44},
+{"name":  "shazhuogzrby734" , "value": 38},
+{"name":  "zcxvp" , "value": 35},
+{"name":  "mo" , "value": 27},
+{"name":  "moxl" , "value": 23},
+{"name":  "EmilioMann" , "value": 20},
+{"name":  "smartcrypto" , "value": 18}
 ]
 },
 {
 "name":  "Ελληνικά (Greek)",
 "children": [
-{"name":  "mitzie" , "size": 98},
-{"name":  "chek2fire" , "size": 39},
-{"name":  "chryspano" , "size": 31},
-{"name":  "publicdomain" , "size": 16},
-{"name":  "evakka" , "size": 10},
-{"name":  "Asimmo" , "size": 6},
-{"name":  "chrisvl" , "size": 5},
-{"name":  "Aegean Skipper" , "size": 3},
-{"name":  "F8N00" , "size": 3},
-{"name":  "1532398" , "size": 1}
+{"name":  "mitzie" , "value": 98},
+{"name":  "chek2fire" , "value": 39},
+{"name":  "chryspano" , "value": 31},
+{"name":  "publicdomain" , "value": 16},
+{"name":  "evakka" , "value": 10},
+{"name":  "Asimmo" , "value": 6},
+{"name":  "chrisvl" , "value": 5},
+{"name":  "Aegean Skipper" , "value": 3},
+{"name":  "F8N00" , "value": 3},
+{"name":  "1532398" , "value": 1}
 ]
 },
 {
 "name":  "한국어 (Korean)",
 "children": [
-{"name":  "thew3apon" , "size": 5},
-{"name":  "gjtnwls1" , "size": 4},
-{"name":  "piececake24" , "size": 3},
-{"name":  "1664749" , "size": 1},
-{"name":  "Kraken-Septimus" , "size": 1}
+{"name":  "thew3apon" , "value": 5},
+{"name":  "gjtnwls1" , "value": 4},
+{"name":  "piececake24" , "value": 3},
+{"name":  "1664749" , "value": 1},
+{"name":  "Kraken-Septimus" , "value": 1}
 ]
 },
 {
 "name":  "Skandinavisk",
 "children": [
-{"name":  "MarcusMillstrom" , "size": 2}
+{"name":  "MarcusMillstrom" , "value": 2}
 ]
 }
 ]
@@ -305,76 +305,76 @@
 {
 "name":  "Bitcoin Discussion",
 "children": [
-{"name":  "QuestionAuthority" , "size": 244},
-{"name":  "tokeweed" , "size": 159},
-{"name":  "Claymore" , "size": 100},
-{"name":  "negeroy" , "size": 100},
-{"name":  "kaycyrpto23" , "size": 85},
-{"name":  "Foxpup" , "size": 82},
-{"name":  "1Referee" , "size": 80},
-{"name":  "dampier007" , "size": 74},
-{"name":  "ifightformerkel" , "size": 59},
-{"name":  "superscommessebitcoin" , "size": 55}
+{"name":  "QuestionAuthority" , "value": 244},
+{"name":  "tokeweed" , "value": 159},
+{"name":  "Claymore" , "value": 100},
+{"name":  "negeroy" , "value": 100},
+{"name":  "kaycyrpto23" , "value": 85},
+{"name":  "Foxpup" , "value": 82},
+{"name":  "1Referee" , "value": 80},
+{"name":  "dampier007" , "value": 74},
+{"name":  "ifightformerkel" , "value": 59},
+{"name":  "superscommessebitcoin" , "value": 55}
 ]
 },
 {
 "name":  "Mining",
 "children": [
-{"name":  "naypalm" , "size": 26},
-{"name":  "QuestionAuthority" , "size": 20},
-{"name":  "Betwrong" , "size": 10},
-{"name":  "HagssFIN" , "size": 9},
-{"name":  "frodocooper" , "size": 8},
-{"name":  "OgNasty" , "size": 6},
-{"name":  "SFR10" , "size": 5},
-{"name":  "leowonderful" , "size": 5},
-{"name":  "davis196" , "size": 4},
-{"name":  "NotFuzzyWarm" , "size": 3}
+{"name":  "naypalm" , "value": 26},
+{"name":  "QuestionAuthority" , "value": 20},
+{"name":  "Betwrong" , "value": 10},
+{"name":  "HagssFIN" , "value": 9},
+{"name":  "frodocooper" , "value": 8},
+{"name":  "OgNasty" , "value": 6},
+{"name":  "SFR10" , "value": 5},
+{"name":  "leowonderful" , "value": 5},
+{"name":  "davis196" , "value": 4},
+{"name":  "NotFuzzyWarm" , "value": 3}
 ]
 },
 {
 "name":  "Development &amp; Technical Discussion",
 "children": [
-{"name":  "achow101" , "size": 297},
-{"name":  "Foxpup" , "size": 127},
-{"name":  "DannyHamilton" , "size": 113},
-{"name":  "Mitchell" , "size": 108},
-{"name":  "suchmoon" , "size": 105},
-{"name":  "dampier007" , "size": 98},
-{"name":  "nullius" , "size": 97},
-{"name":  "DooMAD" , "size": 76},
-{"name":  "DarkStar_" , "size": 71},
-{"name":  "Xynerise" , "size": 64}
+{"name":  "achow101" , "value": 297},
+{"name":  "Foxpup" , "value": 127},
+{"name":  "DannyHamilton" , "value": 113},
+{"name":  "Mitchell" , "value": 108},
+{"name":  "suchmoon" , "value": 105},
+{"name":  "dampier007" , "value": 98},
+{"name":  "nullius" , "value": 97},
+{"name":  "DooMAD" , "value": 76},
+{"name":  "DarkStar_" , "value": 71},
+{"name":  "Xynerise" , "value": 64}
 ]
 },
 {
 "name":  "Bitcoin Technical Support",
 "children": [
-{"name":  "achow101" , "size": 91},
-{"name":  "mindrust" , "size": 70},
-{"name":  "DannyHamilton" , "size": 60},
-{"name":  "Foxpup" , "size": 43},
-{"name":  "suchmoon" , "size": 43},
-{"name":  "LoyceV" , "size": 37},
-{"name":  "HCP" , "size": 33},
-{"name":  "DarkStar_" , "size": 33},
-{"name":  "cryptoico.studio" , "size": 26},
-{"name":  "Jet Cash" , "size": 23}
+{"name":  "achow101" , "value": 91},
+{"name":  "mindrust" , "value": 70},
+{"name":  "DannyHamilton" , "value": 60},
+{"name":  "Foxpup" , "value": 43},
+{"name":  "suchmoon" , "value": 43},
+{"name":  "LoyceV" , "value": 37},
+{"name":  "HCP" , "value": 33},
+{"name":  "DarkStar_" , "value": 33},
+{"name":  "cryptoico.studio" , "value": 26},
+{"name":  "Jet Cash" , "value": 23}
 ]
 },
 {
 "name":  "Project Development",
 "children": [
-{"name":  "Vod" , "size": 83},
-{"name":  "grchina" , "size": 42},
-{"name":  "eternalgloom" , "size": 10},
-{"name":  "SmartIphone" , "size": 10},
-{"name":  "CjMapope" , "size": 10},
-{"name":  "OgNasty" , "size": 9},
-{"name":  "edgycorner" , "size": 7},
-{"name":  "LeGaulois" , "size": 7},
-{"name":  "ACP" , "size": 7},
-{"name":  "Lucius" , "size": 6}
+{"name":  "Vod" , "value": 83},
+{"name":  "grchina" , "value": 42},
+{"name":  "eternalgloom" , "value": 10},
+{"name":  "SmartIphone" , "value": 10},
+{"name":  "CjMapope" , "value": 10},
+{"name":  "OgNasty" , "value": 9},
+{"name":  "edgycorner" , "value": 7},
+{"name":  "LeGaulois" , "value": 7},
+{"name":  "ACP" , "value": 7},
+{"name":  "Lucius" , "value": 6}
 ]
 }
 ]
@@ -385,91 +385,91 @@
 {
 "name":  "Meta",
 "children": [
-{"name":  "TMAN" , "size": 626},
-{"name":  "Vod" , "size": 562},
-{"name":  "Foxpup" , "size": 341},
-{"name":  "fortunecrypto" , "size": 293},
-{"name":  "mprep" , "size": 232},
-{"name":  "suchmoon" , "size": 225},
-{"name":  "DarkStar_" , "size": 200},
-{"name":  "TheHas" , "size": 178},
-{"name":  "The Pharmacist" , "size": 172},
-{"name":  "theymos" , "size": 159}
+{"name":  "TMAN" , "value": 626},
+{"name":  "Vod" , "value": 562},
+{"name":  "Foxpup" , "value": 341},
+{"name":  "fortunecrypto" , "value": 293},
+{"name":  "mprep" , "value": 232},
+{"name":  "suchmoon" , "value": 225},
+{"name":  "DarkStar_" , "value": 200},
+{"name":  "TheHas" , "value": 178},
+{"name":  "The Pharmacist" , "value": 172},
+{"name":  "theymos" , "value": 159}
 ]
 },
 {
 "name":  "Beginners &amp; Help",
 "children": [
-{"name":  "snipie" , "size": 182},
-{"name":  "k@suy" , "size": 101},
-{"name":  "TMAN" , "size": 81},
-{"name":  "OgNasty" , "size": 71},
-{"name":  "wiser" , "size": 50},
-{"name":  "iwantapony" , "size": 50},
-{"name":  "Jet Cash" , "size": 41},
-{"name":  "paxmao" , "size": 38},
-{"name":  "fortunecrypto" , "size": 36},
-{"name":  "Wusolini" , "size": 35}
+{"name":  "snipie" , "value": 182},
+{"name":  "k@suy" , "value": 101},
+{"name":  "TMAN" , "value": 81},
+{"name":  "OgNasty" , "value": 71},
+{"name":  "wiser" , "value": 50},
+{"name":  "iwantapony" , "value": 50},
+{"name":  "Jet Cash" , "value": 41},
+{"name":  "paxmao" , "value": 38},
+{"name":  "fortunecrypto" , "value": 36},
+{"name":  "Wusolini" , "value": 35}
 ]
 },
 {
 "name":  "Serious discussion",
 "children": [
-{"name":  "paxmao" , "size": 80},
-{"name":  "Vod" , "size": 79},
-{"name":  "suchmoon" , "size": 57},
-{"name":  "mprep" , "size": 54},
-{"name":  "QuestionAuthority" , "size": 41},
-{"name":  "funsponge" , "size": 24},
-{"name":  "bones261" , "size": 22},
-{"name":  "Foxpup" , "size": 22},
-{"name":  "Welsh" , "size": 16},
-{"name":  "Jet Cash" , "size": 15}
+{"name":  "paxmao" , "value": 80},
+{"name":  "Vod" , "value": 79},
+{"name":  "suchmoon" , "value": 57},
+{"name":  "mprep" , "value": 54},
+{"name":  "QuestionAuthority" , "value": 41},
+{"name":  "funsponge" , "value": 24},
+{"name":  "bones261" , "value": 22},
+{"name":  "Foxpup" , "value": 22},
+{"name":  "Welsh" , "value": 16},
+{"name":  "Jet Cash" , "value": 15}
 ]
 },
 {
 "name":  "Off-topic",
 "children": [
-{"name":  "QuestionAuthority" , "size": 726},
-{"name":  "Vod" , "size": 59},
-{"name":  "Searing" , "size": 51},
-{"name":  "HCLivess" , "size": 50},
-{"name":  "TMAN" , "size": 40},
-{"name":  "KWH" , "size": 36},
-{"name":  "Wusolini" , "size": 20},
-{"name":  "Mitchell" , "size": 20},
-{"name":  "PuraPuraBego" , "size": 20},
-{"name":  "Foxpup" , "size": 17}
+{"name":  "QuestionAuthority" , "value": 726},
+{"name":  "Vod" , "value": 59},
+{"name":  "Searing" , "value": 51},
+{"name":  "HCLivess" , "value": 50},
+{"name":  "TMAN" , "value": 40},
+{"name":  "KWH" , "value": 36},
+{"name":  "Wusolini" , "value": 20},
+{"name":  "Mitchell" , "value": 20},
+{"name":  "PuraPuraBego" , "value": 20},
+{"name":  "Foxpup" , "value": 17}
 ]
 },
 {
 "name":  "Politics &amp; Society",
 "children": [
-{"name":  "CoinCube" , "size": 52},
-{"name":  "Vod" , "size": 48},
-{"name":  "QuestionAuthority" , "size": 41},
-{"name":  "krakozyabra" , "size": 40},
-{"name":  "Astargath" , "size": 30},
-{"name":  "nethan1btc" , "size": 30},
-{"name":  "Foxpup" , "size": 25},
-{"name":  "259633" , "size": 25},
-{"name":  "kaltun" , "size": 25},
-{"name":  "B1tUnl0ck3r" , "size": 24}
+{"name":  "CoinCube" , "value": 52},
+{"name":  "Vod" , "value": 48},
+{"name":  "QuestionAuthority" , "value": 41},
+{"name":  "krakozyabra" , "value": 40},
+{"name":  "Astargath" , "value": 30},
+{"name":  "nethan1btc" , "value": 30},
+{"name":  "Foxpup" , "value": 25},
+{"name":  "259633" , "value": 25},
+{"name":  "kaltun" , "value": 25},
+{"name":  "B1tUnl0ck3r" , "value": 24}
 ]
 },
 {
 "name":  "Archival",
 "children": [
-{"name":  "chryspano" , "size": 40},
-{"name":  "Sir Paijoe" , "size": 29},
-{"name":  "anehh" , "size": 10},
-{"name":  "tarmi" , "size": 10},
-{"name":  "Zepher" , "size": 5},
-{"name":  "suchmoon" , "size": 4},
-{"name":  "B4RF" , "size": 4},
-{"name":  "anorganix" , "size": 3},
-{"name":  "nullius" , "size": 3},
-{"name":  "iigor" , "size": 3}
+{"name":  "chryspano" , "value": 40},
+{"name":  "Sir Paijoe" , "value": 29},
+{"name":  "anehh" , "value": 10},
+{"name":  "tarmi" , "value": 10},
+{"name":  "Zepher" , "value": 5},
+{"name":  "suchmoon" , "value": 4},
+{"name":  "B4RF" , "value": 4},
+{"name":  "anorganix" , "value": 3},
+{"name":  "nullius" , "value": 3},
+{"name":  "iigor" , "value": 3}
 ]
 }
 ]
@@ -480,46 +480,46 @@
 {
 "name":  "Marketplace",
 "children": [
-{"name":  "Seccour" , "size": 50},
-{"name":  "Coroline" , "size": 25},
-{"name":  "alani123" , "size": 12},
-{"name":  "Sadlife" , "size": 11},
-{"name":  "OgNasty" , "size": 11},
-{"name":  "oseventwenty" , "size": 10},
-{"name":  "arthurbonora" , "size": 10},
-{"name":  "Noctis Connor" , "size": 10},
-{"name":  "216279" , "size": 10},
-{"name":  "tiggytomb" , "size": 8}
+{"name":  "Seccour" , "value": 50},
+{"name":  "Coroline" , "value": 25},
+{"name":  "alani123" , "value": 12},
+{"name":  "Sadlife" , "value": 11},
+{"name":  "OgNasty" , "value": 11},
+{"name":  "oseventwenty" , "value": 10},
+{"name":  "arthurbonora" , "value": 10},
+{"name":  "Noctis Connor" , "value": 10},
+{"name":  "216279" , "value": 10},
+{"name":  "tiggytomb" , "value": 8}
 ]
 },
 {
 "name":  "Trading Discussion",
 "children": [
-{"name":  "QuestionAuthority" , "size": 71},
-{"name":  "MoneyIsDebt" , "size": 36},
-{"name":  "Gotumoot" , "size": 27},
-{"name":  "Ronaldcoin2017" , "size": 20},
-{"name":  "hovrah" , "size": 20},
-{"name":  "Fulmand" , "size": 16},
-{"name":  "alt-fire" , "size": 11},
-{"name":  "wilburwilbur" , "size": 11},
-{"name":  "haroldtee" , "size": 10},
-{"name":  "leonix007" , "size": 10}
+{"name":  "QuestionAuthority" , "value": 71},
+{"name":  "MoneyIsDebt" , "value": 36},
+{"name":  "Gotumoot" , "value": 27},
+{"name":  "Ronaldcoin2017" , "value": 20},
+{"name":  "hovrah" , "value": 20},
+{"name":  "Fulmand" , "value": 16},
+{"name":  "alt-fire" , "value": 11},
+{"name":  "wilburwilbur" , "value": 11},
+{"name":  "haroldtee" , "value": 10},
+{"name":  "leonix007" , "value": 10}
 ]
 },
 {
 "name":  "Economics",
 "children": [
-{"name":  "Hydrogen" , "size": 111},
-{"name":  "paxmao" , "size": 84},
-{"name":  "QuestionAuthority" , "size": 70},
-{"name":  "ivanst776" , "size": 60},
-{"name":  "Noctis Connor" , "size": 50},
-{"name":  "Ronaldcoin2017" , "size": 50},
-{"name":  "jpoker272727" , "size": 45},
-{"name":  "thend1949" , "size": 35},
-{"name":  "Mometaskers" , "size": 31},
-{"name":  "krishnapramod" , "size": 29}
+{"name":  "Hydrogen" , "value": 111},
+{"name":  "paxmao" , "value": 84},
+{"name":  "QuestionAuthority" , "value": 70},
+{"name":  "ivanst776" , "value": 60},
+{"name":  "Noctis Connor" , "value": 50},
+{"name":  "Ronaldcoin2017" , "value": 50},
+{"name":  "jpoker272727" , "value": 45},
+{"name":  "thend1949" , "value": 35},
+{"name":  "Mometaskers" , "value": 31},
+{"name":  "krishnapramod" , "value": 29}
 ]
 }
 ]
@@ -530,79 +530,79 @@
 {
 "name":  "Mining (Altcoins)",
 "children": [
-{"name":  "suchmoon" , "size": 149},
-{"name":  "vapourminer" , "size": 93},
-{"name":  "BitBustah" , "size": 80},
-{"name":  "CjMapope" , "size": 71},
-{"name":  "citronick" , "size": 71},
-{"name":  "scryptr" , "size": 61},
-{"name":  "antantti" , "size": 61},
-{"name":  "mindrust" , "size": 47},
-{"name":  "AmunRa" , "size": 44},
-{"name":  "BogdanCo" , "size": 40}
+{"name":  "suchmoon" , "value": 149},
+{"name":  "vapourminer" , "value": 93},
+{"name":  "BitBustah" , "value": 80},
+{"name":  "CjMapope" , "value": 71},
+{"name":  "citronick" , "value": 71},
+{"name":  "scryptr" , "value": 61},
+{"name":  "antantti" , "value": 61},
+{"name":  "mindrust" , "value": 47},
+{"name":  "AmunRa" , "value": 44},
+{"name":  "BogdanCo" , "value": 40}
 ]
 },
 {
 "name":  "Marketplace (Altcoins)",
 "children": [
-{"name":  "Cassius" , "size": 50},
-{"name":  "mekar sari" , "size": 50},
-{"name":  "Betfair" , "size": 25},
-{"name":  "Webcelerator" , "size": 25},
-{"name":  "pitipawn" , "size": 20},
-{"name":  "whaawh" , "size": 20},
-{"name":  "gunhell16" , "size": 16},
-{"name":  "ivanst776" , "size": 15},
-{"name":  "Hhampuz" , "size": 15},
-{"name":  "SmartIphone" , "size": 12}
+{"name":  "Cassius" , "value": 50},
+{"name":  "mekar sari" , "value": 50},
+{"name":  "Betfair" , "value": 25},
+{"name":  "Webcelerator" , "value": 25},
+{"name":  "pitipawn" , "value": 20},
+{"name":  "whaawh" , "value": 20},
+{"name":  "gunhell16" , "value": 16},
+{"name":  "ivanst776" , "value": 15},
+{"name":  "Hhampuz" , "value": 15},
+{"name":  "SmartIphone" , "value": 12}
 ]
 },
 {
 "name":  "Announcements (Altcoins)",
 "children": [
-{"name":  "Bittzy78" , "size": 202},
-{"name":  "1369" , "size": 178},
-{"name":  "hrbt" , "size": 165},
-{"name":  "Piston Honda" , "size": 144},
-{"name":  "Vlad2Vlad" , "size": 135},
-{"name":  "gawlea" , "size": 135},
-{"name":  "corather" , "size": 121},
-{"name":  "ekkoadmiral" , "size": 115},
-{"name":  "DNotes" , "size": 111},
-{"name":  "mellon" , "size": 105}
+{"name":  "Bittzy78" , "value": 202},
+{"name":  "1369" , "value": 178},
+{"name":  "hrbt" , "value": 165},
+{"name":  "Piston Honda" , "value": 144},
+{"name":  "Vlad2Vlad" , "value": 135},
+{"name":  "gawlea" , "value": 135},
+{"name":  "corather" , "value": 121},
+{"name":  "ekkoadmiral" , "value": 115},
+{"name":  "DNotes" , "value": 111},
+{"name":  "mellon" , "value": 105}
 ]
 },
 {
 "name":  "Altcoin Discussion",
 "children": [
-{"name":  "iCEBREAKER" , "size": 99},
-{"name":  "boltz" , "size": 90},
-{"name":  "Morguk" , "size": 72},
-{"name":  "Jasad" , "size": 65},
-{"name":  "paxmao" , "size": 60},
-{"name":  "ace4549" , "size": 60},
-{"name":  "Piston Honda" , "size": 60},
-{"name":  "serje" , "size": 50},
-{"name":  "cryptoheadd" , "size": 50},
-{"name":  "chronicsky" , "size": 50}
+{"name":  "iCEBREAKER" , "value": 99},
+{"name":  "boltz" , "value": 90},
+{"name":  "Morguk" , "value": 72},
+{"name":  "Jasad" , "value": 65},
+{"name":  "paxmao" , "value": 60},
+{"name":  "ace4549" , "value": 60},
+{"name":  "Piston Honda" , "value": 60},
+{"name":  "serje" , "value": 50},
+{"name":  "cryptoheadd" , "value": 50},
+{"name":  "chronicsky" , "value": 50}
 ]
 },
 {
 "name":  "Speculation (Altcoins)",
 "children": [
-{"name":  "generalizethis" , "size": 106},
-{"name":  "ahoenk" , "size": 75},
-{"name":  "john1010" , "size": 58},
-{"name":  "explorer" , "size": 55},
-{"name":  "devollito" , "size": 50},
-{"name":  "oblox" , "size": 50},
-{"name":  "premium_domainer" , "size": 50},
-{"name":  "Globb0" , "size": 43},
-{"name":  "yua_na" , "size": 41},
-{"name":  "Hueristic" , "size": 35}
+{"name":  "generalizethis" , "value": 106},
+{"name":  "ahoenk" , "value": 75},
+{"name":  "john1010" , "value": 58},
+{"name":  "explorer" , "value": 55},
+{"name":  "devollito" , "value": 50},
+{"name":  "oblox" , "value": 50},
+{"name":  "premium_domainer" , "value": 50},
+{"name":  "Globb0" , "value": 43},
+{"name":  "yua_na" , "value": 41},
+{"name":  "Hueristic" , "value": 35}
 ]
 }
 ]
 }
 ]
-}
+},
