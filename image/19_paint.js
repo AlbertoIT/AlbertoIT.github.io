@@ -52,8 +52,9 @@ var PictureCanvas = class PictureCanvas {
 }
 
 function drawPicture(picture, canvas, scale) {
-  if (picture === "undefined")
+  if (typeof picture === "undefined")
 	return;
+	
   canvas.width = picture.width * scale;
   canvas.height = picture.height * scale;
   let cx = canvas.getContext("2d");
