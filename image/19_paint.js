@@ -124,6 +124,7 @@ var PixelEditor = class PixelEditor {
     this.dom = elt("div", {}, this.canvas.dom, elt("br"),
                    ...this.controls.reduce(
                      (a, c) => a.concat(" ", c.dom), []));
+  getData(dispatch);
   }
   setState(state) {
     this.state = state;
