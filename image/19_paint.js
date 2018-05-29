@@ -34,7 +34,7 @@ function elt(type, props, ...children) {
   return dom;
 }
 
-var scale = 10;
+var scale = 1;
 
 var PictureCanvas = class PictureCanvas {
   constructor(picture, pointerDown) {
