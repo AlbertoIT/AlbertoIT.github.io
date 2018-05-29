@@ -147,14 +147,14 @@ var ToolSelect = class ToolSelect {
 
 var ScaleSelect = class ScaleSelect {
   constructor(state, {scales, dispatch}) {
-    this.select = elt("scale", {
-      onchange: () => dispatch({tool: this.select.value})
+    this.select1 = elt("select1", {
+      onchange: () => dispatch({tool: this.select1.value})
     }, ...Object.keys(scales).map(name => elt("option", {
       selected: name == state.scale
     }, name)));
-    this.dom = elt("label", null, "🖌 Scale: ", this.select);
+    this.dom = elt("label", null, "🖌 Scale: ", this.select1);
   }
-  setState(state) { this.select.value = state.scale; }
+  setState(state) { this.select1.value = state.scale; }
 }
 
 var ColorSelect = class ColorSelect {
