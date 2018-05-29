@@ -149,7 +149,7 @@ var ScaleSelect = class ToolSelect {
   constructor(state, {scales, dispatch}) {
     this.select = elt("select", {
       onchange: () => dispatch({tool: this.select.value})
-    }, ...Object.keys(tools).map(name => elt("option", {
+    }, ...Object.keys(scales).map(name => elt("option", {
       selected: name == state.scale
     }, name)));
     this.dom = elt("label", null, "🖌 Scale: ", this.select);
@@ -448,6 +448,7 @@ function startPixelEditor({state = startState,
                            controls = baseControls}) {
   let app = new PixelEditor(state, {
     tools,
+    scales,
     controls,
     dispatch(action) {
       state = historyUpdateState(state, action);
