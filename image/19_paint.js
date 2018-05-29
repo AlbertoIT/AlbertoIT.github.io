@@ -428,6 +428,7 @@ var PixelPacking = class PixelPacking {
 
 var startState = {
   tool: "draw",
+  scale: 1,
   color: "#000000",
   picture: Picture.empty(60, 30, "#f0f0f0"),
   done: [],
