@@ -153,7 +153,7 @@ var ScaleSelect = class ScaleSelect {
       selected: name == state.scale
     }, name)));
     this.dom = elt("label", null, "🖌 Scale: ", this.selectScale);
-	  drawPicture(this.picture, canvas, this.selectScale.value);
+	  drawPicture(this.picture, this.dom, this.selectScale.value);
   }
   setState(state) { this.selectScale.value = state.scale; }
 }
