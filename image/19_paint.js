@@ -135,7 +135,7 @@ var PixelEditor = class PixelEditor {
 
 var ToolSelect = class ToolSelect {
   constructor(state, {tools, dispatch}) {
-    this.select = elt("scale", {
+    this.select = elt("select", {
       onchange: () => dispatch({tool: this.select.value})
     }, ...Object.keys(tools).map(name => elt("option", {
       selected: name == state.tool
@@ -147,7 +147,7 @@ var ToolSelect = class ToolSelect {
 
 var ScaleSelect = class ScaleSelect {
   constructor(state, {scales, dispatch}) {
-    this.select = elt("select", {
+    this.select = elt("scale", {
       onchange: () => dispatch({tool: this.select.value})
     }, ...Object.keys(scales).map(name => elt("option", {
       selected: name == state.scale
