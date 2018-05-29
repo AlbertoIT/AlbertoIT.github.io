@@ -435,7 +435,7 @@ var startState = {
 };
 
 var baseTools = {draw, fill, line, rectangle, circle, pick};
-var baseScales = ["1", "2", "3", "4", "5", "6", "7", "8", "9" , "10", "15", "20"];
+var baseScales = {'1':'1', '2':'2','3':'4' };
 
 var baseControls = [
    ScaleSelect, ToolSelect, ColorSelect, SaveButton, LoadButton, UndoButton, PixelPacking,PixelUnpacking
