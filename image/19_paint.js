@@ -144,6 +144,18 @@ var ToolSelect = class ToolSelect {
   setState(state) { this.select.value = state.tool; }
 }
 
+var ScaleSelect = class ToolSelect {
+  constructor(state, {scales, dispatch}) {
+    this.select = elt("select", {
+      onchange: () => dispatch({tool: this.select.value})
+    }, ...Object.keys(scales).map(name => elt("option", {
+      selected: name == state.scale
+    }, name)));
+    this.dom = elt("label", null, "🖌 Scale: ", this.select);
+  }
+  setState(state) { this.select.value = state.scale; }
+}
+
 var ColorSelect = class ColorSelect {
   constructor(state, {dispatch}) {
     this.input = elt("input", {
@@ -422,13 +434,15 @@ var startState = {
 };
 
 var baseTools = {draw, fill, line, rectangle, circle, pick};
+var baseScales = {1, 2, 3, 4, 5, 6, 7, 8, 9 ,10, 15, 20};
 
 var baseControls = [
-  ToolSelect, ColorSelect, SaveButton, LoadButton, UndoButton, PixelPacking,PixelUnpacking
+  ScaleSelect, ToolSelect, ColorSelect, SaveButton, LoadButton, UndoButton, PixelPacking,PixelUnpacking
 ];
 
 function startPixelEditor({state = startState,
                            tools = baseTools,
+			   scales = baseScales,
                            controls = baseControls}) {
   let app = new PixelEditor(state, {
     tools,
