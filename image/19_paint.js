@@ -145,7 +145,7 @@ var ToolSelect = class ToolSelect {
   setState(state) { this.select.value = state.tool; }
 }
 
-var ScaleSelect = class ToolSelect {
+var ScaleSelect = class ScaleSelect {
   constructor(state, {scales, dispatch}) {
     this.select = elt("select", {
       onchange: () => dispatch({tool: this.select.value})
