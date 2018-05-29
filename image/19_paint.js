@@ -438,7 +438,7 @@ var baseTools = {draw, fill, line, rectangle, circle, pick};
 var baseScales = ["1", "2", "3", "4", "5", "6", "7", "8", "9" , "10", "15", "20"];
 
 var baseControls = [
-   ToolSelect, ColorSelect, SaveButton, LoadButton, UndoButton, PixelPacking,PixelUnpacking
+   ScaleSelect, ToolSelect, ColorSelect, SaveButton, LoadButton, UndoButton, PixelPacking,PixelUnpacking
 ];
 
 function startPixelEditor({state = startState,
