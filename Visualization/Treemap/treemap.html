@@ -347,7 +347,7 @@ d3.json("flare.json", function(root) {
         .attr("class", "parent")
         .call(rect)
       .append("title")
-        .text(function(d) { return formatNumber(d.value); });
+        .text(function(d) { return formatNumber(d.value+1000000000); });
     g.append("text")
         .attr("dy", ".75em")
         .text(function(d) { return d.name; })
