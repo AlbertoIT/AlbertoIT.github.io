@@ -4,8 +4,6 @@
 <title>Zoomable Treemaps</title>
 <style>
 #chart {
-  width: 960px;
-  height: 500px;
   background: #ffe6cc;
 }
 text {
@@ -55,25 +53,27 @@ rect.parent,
 
 <script src="d3.v3.min.js" charset="utf-8"></script></script>
 <script>
+var widthClient = window.innerWidth || document.body.clientWidth;
+var heightClient = window.innerHeight || document.body.clientHeight;
 var margin = {top: 20, right: 0, bottom: 0, left: 0},
-    width = 960,
-    height = 500 - margin.top - margin.bottom,
+    width = widthClient,
+    height = heightClient - margin.top - margin.bottom,
     formatNumber = d3.format(",d"),
     transitioning;
 var x = d3.scale.linear()
-    .domain([0, width])
-    .range([0, width]);
+    .domain([0, widthClient])
+    .range([0, widthClient]);
 var y = d3.scale.linear()
-    .domain([0, height])
-    .range([0, height]);
+    .domain([0, heightClient])
+    .range([0, heightClient]);
 var treemap = d3.layout.treemap()
     .children(function(d, depth) { return depth ? null : d._children; })
     .sort(function(a, b) { return a.value - b.value; })
-    .ratio(height / width * 0.5 * (1 + Math.sqrt(5)))
+    .ratio(heightClient / widthClient * 0.5 * (1 + Math.sqrt(5)))
     .round(false);
 var svg = d3.select("#chart").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.bottom + margin.top)
+    .attr("width", widthClient + margin.left + margin.right)
+    .attr("height", heightClient + margin.bottom + margin.top)
     .style("margin-left", -margin.left + "px")
     .style("margin.right", -margin.right + "px")
   .append("g")
@@ -83,7 +83,7 @@ var grandparent = svg.append("g")
     .attr("class", "grandparent");
 grandparent.append("rect")
     .attr("y", -margin.top)
-    .attr("width", width)
+    .attr("width", widthClient)
     .attr("height", margin.top);
 grandparent.append("text")
     .attr("x", 6)
@@ -96,8 +96,8 @@ d3.json("flare.json", function(root) {
   display(root);
   function initialize(root) {
     root.x = root.y = 0;
-    root.dx = width;
-    root.dy = height;
+    root.dx = widthClient;
+    root.dy = heightClient;
     root.depth = 0;
   }
   function accumulate(d) {
