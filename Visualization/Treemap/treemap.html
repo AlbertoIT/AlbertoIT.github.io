@@ -1,58 +1,44 @@
-
-
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
 <title>Zoomable Treemaps</title>
 <style>
-
-
 #chart {
-  width: 1366px;
-  height: 768px;
+  width: 960px;
+  height: 500px;
   background: #ffe6cc;
 }
-
 text {
   pointer-events: none;
 }
-
 .grandparent text {
   font-weight: bold;
 }
-
 rect {
   fill: none;
   stroke: #000000;
 }
-
 rect.parent,
 .grandparent rect {
   stroke-width: 2px;
 }
-
 .grandparent rect {
   fill: ffcc99;
 }
-
 .grandparent:hover rect {
   fill: #ffcc99;
 }
-
 .children rect.parent,
 .grandparent rect {
   cursor: pointer;
 }
-
 .children rect.parent {
   fill: #cce6ff;
   fill-opacity: .5;
 }
-
 .children:hover rect.child {
   fill: #66b3ff;
 }
-
 </style>
 
 <header>
@@ -69,10 +55,9 @@ rect.parent,
 
 <script src="d3.v3.min.js" charset="utf-8"></script></script>
 <script>
-  
 var margin = {top: 20, right: 0, bottom: 0, left: 0},
-    width = width,
-    height = height - margin.top - margin.bottom,
+    width = 960,
+    height = 500 - margin.top - margin.bottom,
     formatNumber = d3.format(",d"),
     transitioning;
 var x = d3.scale.linear()
