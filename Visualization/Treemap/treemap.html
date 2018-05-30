@@ -260,6 +260,7 @@ var widthClient = window.innerWidth || document.body.clientWidth;
   widthClient -= 50;
 var heightClient = window.innerHeight || document.body.clientHeight;
   heightClient-= 50;
+var description = 'Merits';
 var margin = {top: 20, right: 0, bottom: 0, left: 0},
     width = widthClient,
     height = heightClient - margin.top - margin.bottom,
@@ -347,7 +348,7 @@ d3.json("flare.json", function(root) {
         .attr("class", "parent")
         .call(rect)
       .append("title")
-        .text(function(d) { return formatNumber(d.value+1000000000); });
+        .text(function(d) { return formatNumber(d.value) + ' ' + description; });
     g.append("text")
         .attr("dy", ".75em")
         .text(function(d) { return d.name; })
