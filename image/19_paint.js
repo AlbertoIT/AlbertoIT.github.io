@@ -339,8 +339,8 @@ function finishLoad(file, dispatch) {
 }
 
 function pictureFromImage(image) {
-  let width = Math.min(100, image.width);
-  let height = Math.min(100, image.height);
+  let width = image.width;
+  let height = image.height;
   let canvas = elt("canvas", {width, height});
   let cx = canvas.getContext("2d");
   cx.drawImage(image, 0, 0);
