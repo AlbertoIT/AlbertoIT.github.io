@@ -73338,15 +73338,12 @@ document.getElementById("sent").innerHTML = JSON.stringify(sentMerit.toArray(), 
 
 var json = (function() {
         var json = null;
-        $.ajax({
-            'async': false,
-            'global': false,
-            'url': "/content.json",
-            'dataType': "json",
-            'success': function (data) {
-                json = data;
-            }
-        });
+        json = $.getJSON("content.json", function(json) {
+        console.log(json); // access the response object
+        console.log(json.data); // access the array
+        console.log(json.data[0]); // access the first object of the array
+        console.log(json.data[0].number); // access the first object proprty of the array
+    });
         return json;
     })();
 
