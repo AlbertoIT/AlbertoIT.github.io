@@ -16,18 +16,16 @@
 document.getElementById("sent").innerHTML = JSON.stringify(sentMerit.toArray(), undefined, 2);
 */ 
 
-var json = (function() {
-        var json = null;
-        json = $.getJSON("https://albertoit.github.io/Visualization/Merit%20js%20tool/content.json", function(json) {
+var result;
+$.getJSON("https://albertoit.github.io/Visualization/Merit%20js%20tool/content.json", function(json) {
+        result = json;
         console.log(json); // access the response object
         console.log(json.data); // access the array
         console.log(json.data[0]); // access the first object of the array
         console.log(json.data[0].number); // access the first object proprty of the array
     });
-        return json;
-    })();
 
-var receivedMerit=$(json).filter(function (i,n){return n.to=='Piggy'});
+var receivedMerit=$(result).filter(function (i,n){return n.to=='Piggy'});
 
 //document.getElementById("received").innerHTML = JSON.stringify(receivedMerit.toArray(), undefined, 2);
 
