@@ -73338,7 +73338,7 @@ document.getElementById("sent").innerHTML = JSON.stringify(sentMerit.toArray(), 
 
 var json = (function() {
         var json = null;
-        json = $.getJSON("content.json", function(json) {
+        json = $.getJSON("/content.json", function(json) {
         console.log(json); // access the response object
         console.log(json.data); // access the array
         console.log(json.data[0]); // access the first object of the array
