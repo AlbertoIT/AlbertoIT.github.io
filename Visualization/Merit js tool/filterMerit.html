@@ -42,7 +42,7 @@ txt += "<table border='1'>"
         txt +="<tr><td>From</td><td>To</td><td>Merits</td></tr>"
         for (x in receivedMerit.toArray()) {
             totalReceived+=receivedMerit[x].merit;
-            txt += "<tr><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id='" + receivedMerit[x].from + ">" + receivedMerit[x].from + "</a></td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id='" + receivedMerit[x].to + ">" + receivedMerit[x].to + "</a></td><td>" + receivedMerit[x].merit + "</td></tr>";
+            txt += "<tr><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + receivedMerit[x].from + "'>" + receivedMerit[x].from + "</a></td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + receivedMerit[x].to + "'>" + receivedMerit[x].to + "</a></td><td>" + receivedMerit[x].merit + "</td></tr>";
         }
         txt +="<tr><td colspan='3'>Total received: " + totalReceived + "</td></tr>"
         txt += "</table>"        
@@ -57,7 +57,7 @@ txt = "<table border='1'>"
         txt +="<tr><td>From</td><td>To</td><td>Merits</td></tr>"
         for (x in sentMerit.toArray()) {
             totalSent+=sentMerit[x].merit;
-            txt += "<tr><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id='" + sentMerit[x].from + ">" + sentMerit[x].from + "</a></td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id='" + sentMerit[x].to + ">" + sentMerit[x].to + "</a></td><td>" + sentMerit[x].merit + "</td></tr>";
+            txt += "<tr><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + sentMerit[x].from + "'>" + sentMerit[x].from + "</a></td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + sentMerit[x].to + "'>" + sentMerit[x].to + "</a></td><td>" + sentMerit[x].merit + "</td></tr>";
         }
         txt +="<tr><td colspan='3'>Total sent: " + totalSent + "</td></tr>"
         txt += "</table>"        
