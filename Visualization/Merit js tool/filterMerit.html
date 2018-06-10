@@ -9,22 +9,22 @@
 <pre id="received"></pre>
 
   <script>
-// noprotect
+function loadJSON(callback) {   
+  var xobj = new XMLHttpRequest();
+  xobj.overrideMimeType("application/json");
+  xobj.open('GET', '../content.json', true);
+  xobj.onreadystatechange = function () {
+    if (xobj.readyState == 4 && xobj.status == "200") {
+      callback(JSON.parse(xobj.responseText));
+    }
+  };
+  xobj.send(null);  
+}
 
-
-/*var sentMerit=$(json).filter(function (i,n){return n.from=='Piggy'});
-document.getElementById("sent").innerHTML = JSON.stringify(sentMerit.toArray(), undefined, 2);
-*/ 
-
-var result;
-$.getJSON("https://albertoit.github.io/Visualization/Merit%20js%20tool/content.json", function(json) {
-        result = json;
-        console.log(json); // access the response object
-        console.log(json.data); // access the array
-        console.log(json.data[0]); // access the first object of the array
-        console.log(json.data[0].number); // access the first object proprty of the array
-    });
-
+loadJSON(function(json) {
+  result= json;
+  console.log(json); // this will log out the json object
+});
 var receivedMerit=$(result).filter(function (i,n){return n.to=='Piggy'});
 
 //document.getElementById("received").innerHTML = JSON.stringify(receivedMerit.toArray(), undefined, 2);
