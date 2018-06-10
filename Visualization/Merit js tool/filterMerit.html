@@ -35,7 +35,7 @@ txt += "<table border='1'>"
             totalReceived+=receivedMerit[x].merit;
             txt += "<tr><td>" + receivedMerit[x].from + "</td><td>" + receivedMerit[x].to + "</td><td>" + receivedMerit[x].merit + "</td></tr>";
         }
-        txt +="<tr><td colspan='3'>" + totalReceived + "</td></tr>"
+        txt +="<tr><td colspan='3'>Total received: " + totalReceived + "</td></tr>"
         txt += "</table>"        
 
 
@@ -50,11 +50,11 @@ txt = "<table border='1'>"
             totalSent+=receivedMerit[x].merit;
             txt += "<tr><td>" + receivedMerit[x].from + "</td><td>" + receivedMerit[x].to + "</td><td>" + receivedMerit[x].merit + "</td></tr>";
         }
-        txt +="<tr><td colspan='3'>" + totalSent + "</td></tr>"
+        txt +="<tr><td colspan='3'>Total sent: " + totalSent + "</td></tr>"
         txt += "</table>"        
 
 
-
+       document.getElementById("tableSent").innerHTML = txt;
 });
 
 
