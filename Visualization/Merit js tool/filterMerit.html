@@ -22,12 +22,7 @@ function loadJSON(callback) {
 }
 var result;
 loadJSON(function(json) {
-  result= json;
-  console.log(json); // this will log out the json object
-});
-var receivedMerit=$(result).filter(function (i,n){return n.to=='Piggy'});
-
-//document.getElementById("received").innerHTML = JSON.stringify(receivedMerit.toArray(), undefined, 2);
+  var receivedMerit=$(result).filter(function (i,n){return n.to=='Piggy'});
 
 var txt="";
 var total=0;
@@ -41,6 +36,11 @@ txt += "<table border='1'>"
         txt +="<tr><td colspan='3'>" + total + "</td></tr>"
         txt += "</table>"        
         document.getElementById("table").innerHTML = txt;
+
+});
+
+
+//document.getElementById("received").innerHTML = JSON.stringify(receivedMerit.toArray(), undefined, 2);
 
  
 </script>
