@@ -46,9 +46,9 @@ var sentMerit=$(json).filter(function (i,n){return n.from=='Piggy'});
 txt = "<table border='1'>"
         txt +="<tr><td colspan='3'>Sent</td></tr>"
         txt +="<tr><td>From</td><td>To</td><td>Merits</td></tr>"
-        for (x in receivedMerit.toArray()) {
-            totalSent+=receivedMerit[x].merit;
-            txt += "<tr><td>" + receivedMerit[x].from + "</td><td>" + receivedMerit[x].to + "</td><td>" + receivedMerit[x].merit + "</td></tr>";
+        for (x in sentMerit.toArray()) {
+            totalSent+=sentMerit[x].merit;
+            txt += "<tr><td>" + sentMerit[x].from + "</td><td>" + sentMerit[x].to + "</td><td>" + sentMerit[x].merit + "</td></tr>";
         }
         txt +="<tr><td colspan='3'>Total sent: " + totalSent + "</td></tr>"
         txt += "</table>"        
