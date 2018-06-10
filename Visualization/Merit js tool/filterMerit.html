@@ -21,9 +21,21 @@ function loadJSON(callback) {
   };
   xobj.send(null);  
 }
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 var result;
+var userid=getParameterByName("id");
 loadJSON(function(json) {
-  var receivedMerit=$(json).filter(function (i,n){return n.to=='Piggy'});
+  var receivedMerit=$(json).filter(function (i,n){return n.to==userid});
 
 var txt="";
 var totalReceived=0;
@@ -41,7 +53,7 @@ txt += "<table border='1'>"
 
         document.getElementById("tableReceived").innerHTML = txt;
 
-var sentMerit=$(json).filter(function (i,n){return n.from=='Piggy'});
+var sentMerit=$(json).filter(function (i,n){return n.from==userid});
 
 txt = "<table border='1'>"
         txt +="<tr><td colspan='3'>Sent</td></tr>"
