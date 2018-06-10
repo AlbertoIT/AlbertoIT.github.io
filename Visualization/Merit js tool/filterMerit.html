@@ -38,13 +38,13 @@ var txt="";
 var totalReceived=0;
 var totalSent=0;
 txt += "<table border='1'>"
-        txt +="<tr><td colspan='4'>Received</td></tr>"
-        txt +="<tr><td>From</td><td>To</td><td>Merits</td><td>Date</td></tr>"
+        txt +="<tr><td colspan='5'>Received</td></tr>"
+        txt +="<tr><td>From</td><td>To</td><td>Merits</td><td>Date</td><td>Msg</td></tr>"
         for (x in receivedMerit.toArray()) {
             totalReceived+=receivedMerit[x].merit;
-            txt += "<tr><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + receivedMerit[x].from + "'>" + receivedMerit[x].from + "</a></td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + receivedMerit[x].to + "'>" + receivedMerit[x].to + "</a></td><td>" + receivedMerit[x].merit + "</td><td>" + receivedMerit[x].date + "</td></tr>";
+            txt += "<tr><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + receivedMerit[x].from + "'>" + receivedMerit[x].from + "</a></td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + receivedMerit[x].to + "'>" + receivedMerit[x].to + "</a></td><td>" + receivedMerit[x].merit + "</td><td>" + receivedMerit[x].date + "</td><td><a href='" + receivedMerit[x].Msg + "'>Msg</a></td></tr>";
         }
-        txt +="<tr><td colspan='4'>Total received: " + totalReceived + "</td></tr>"
+        txt +="<tr><td colspan='5'>Total received: " + totalReceived + "</td></tr>"
         txt += "</table>"        
 
 
@@ -53,13 +53,13 @@ txt += "<table border='1'>"
 var sentMerit=$(json).filter(function (i,n){return n.from==userid});
 
 txt = "<table border='1'>"
-        txt +="<tr><td colspan='4'>Sent</td></tr>"
-        txt +="<tr><td>From</td><td>To</td><td>Merits</td><td>Date</td></tr>"
+        txt +="<tr><td colspan='5'>Sent</td></tr>"
+        txt +="<tr><td>From</td><td>To</td><td>Merits</td><td>Date</td><td>Msg</td></tr>"
         for (x in sentMerit.toArray()) {
             totalSent+=sentMerit[x].merit;
-            txt += "<tr><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + sentMerit[x].from + "'>" + sentMerit[x].from + "</a></td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + sentMerit[x].to + "'>" + sentMerit[x].to + "</a></td><td>" + sentMerit[x].merit + "</td><td>" + sentMerit[x].date + "</td></tr>";
+            txt += "<tr><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + sentMerit[x].from + "'>" + sentMerit[x].from + "</a></td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + sentMerit[x].to + "'>" + sentMerit[x].to + "</a></td><td>" + sentMerit[x].merit + "</td><td>" + sentMerit[x].date + "</td><td><a href='" + sentMerit[x].Msg + "'>Msg</a></td></tr>";
         }
-        txt +="<tr><td colspan='4'>Total sent: " + totalSent + "</td></tr>"
+        txt +="<tr><td colspan='5'>Total sent: " + totalSent + "</td></tr>"
         txt += "</table>"        
 
 
