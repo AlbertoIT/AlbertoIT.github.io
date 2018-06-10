@@ -42,7 +42,7 @@ txt += "<table border='1'>"
         txt +="<tr><td>From</td><td>To</td><td>Merits</td></tr>"
         for (x in receivedMerit.toArray()) {
             totalReceived+=receivedMerit[x].merit;
-            txt += "<tr><td>" + receivedMerit[x].from + "</td><td>" + receivedMerit[x].to + "</td><td>" + receivedMerit[x].merit + "</td></tr>";
+            txt += "<tr><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id='>" + receivedMerit[x].from + "</a></td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id='>" + receivedMerit[x].to + "</a></td><td>" + receivedMerit[x].merit + "</td></tr>";
         }
         txt +="<tr><td colspan='3'>Total received: " + totalReceived + "</td></tr>"
         txt += "</table>"        
@@ -57,7 +57,7 @@ txt = "<table border='1'>"
         txt +="<tr><td>From</td><td>To</td><td>Merits</td></tr>"
         for (x in sentMerit.toArray()) {
             totalSent+=sentMerit[x].merit;
-            txt += "<tr><td>" + sentMerit[x].from + "</td><td>" + sentMerit[x].to + "</td><td>" + sentMerit[x].merit + "</td></tr>";
+            txt += "<tr><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id='>" + sentMerit[x].from + "</a></td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id='>" + sentMerit[x].to + "</a></td><td>" + sentMerit[x].merit + "</td></tr>";
         }
         txt +="<tr><td colspan='3'>Total sent: " + totalSent + "</td></tr>"
         txt += "</table>"        
@@ -65,10 +65,6 @@ txt = "<table border='1'>"
 
        document.getElementById("tableSent").innerHTML = txt;
 });
-
-
-//document.getElementById("received").innerHTML = JSON.stringify(receivedMerit.toArray(), undefined, 2);
-
  
 </script>
 </head>
