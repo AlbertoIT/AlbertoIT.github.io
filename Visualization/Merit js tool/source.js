@@ -28,7 +28,7 @@ function createTable(title, data){
         txt +="<tr><td>Tx</td><td>From</td><td>To</td><td>Merits</td><td>Date</td><td>Msg</td></tr>"
         for (x in data) {
             totalMerit+=data[x].merit;
-            txt += "<tr><td>" + data[x].tx + "</td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + data[x].from + "'>" + data[x].from + "</a></td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + data[x].to + "'>" + data[x].to + "</a></td><td>" + data[x].merit + "</td><td>" + data[x].date + "</td><td><a href='https://bitcointalk.org/index.php?topic=" + data[x].Msg + "'>Msg</a></td></tr>";
+            txt += "<tr><td>" + data[x].tx + "</td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + data[x].from + "'>" + data[x].from + "</a></td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMerit.html?id=" + data[x].to + "'>" + data[x].to + "</a></td><td>" + data[x].merit + "</td><td>" + data[x].date + "</td><td><a href='https://bitcointalk.org/index.php?topic=" + data[x].Msg + "#" + data[x].Msg.substring(0, input_string.indexOf(".")) + "'>Msg</a></td></tr>";
         }
         txt +="<tr><td colspan='6'>Total: " + totalMerit + "</td></tr>"
         txt += "</table>"        
