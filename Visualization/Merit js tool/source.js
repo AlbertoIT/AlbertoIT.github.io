@@ -183,7 +183,7 @@ var dateEqual=getParameterByName("dateequal");
 			result = getMeritRange(meritGreater,meritLower,result);
 		else if (isValidData(meritGreater)) 
 			result = getMeritAbove(meritGreater,result);
-		else if (isValidData(dateLower)) 
+		else if (isValidData(meritLower)) 
 			result = getMeritBelow(meritLower,result);
 		else if (isValidData(meritEqual)) 
 			result = getMeritEqual(meritEqual,result);
