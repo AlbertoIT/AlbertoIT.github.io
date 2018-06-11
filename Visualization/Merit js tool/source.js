@@ -118,7 +118,7 @@ function getMeritAbove(merit, data){
 function getMeritBelow(merit, data){
 		
 		var filteredData = data.filter(function(a){
-			return a.merit >= merit;
+			return a.merit <= merit;
 		});
 
 	return filteredData;
