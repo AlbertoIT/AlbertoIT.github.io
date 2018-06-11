@@ -136,18 +136,6 @@ return filteredData;
 }
 
 
-var tx=getParameterByName("tx");
-var userid=getParameterByName("id");
-var meritEqual=getParameterByName("meritequal");
-var meritGreater=getParameterByName("meritgreater");
-var meritLower=getParameterByName("meritlower");
-var fromUser=getParameterByName("fromuser");
-var toUser=getParameterByName("touser");
-var dateLower=getParameterByName("datelower");
-var dateGreater=getParameterByName("dategreater");
-var dateEqual=getParameterByName("dateequal");
-
-
 function filterData(json){
 
 var result=json;
