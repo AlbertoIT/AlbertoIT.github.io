@@ -189,10 +189,10 @@ var dateEqual=getParameterByName("dateequal");
 			result = getMeritEqual(meritEqual,result);
 			
 		if (isValidData(fromUser))
-			result = $(result).filter(function (i,n){return n.from==fromUser}).toArray();
+			result = $(result).filter(function (i,n){return n.from.toLowerCase()==fromUser.toLowerCase()}).toArray();
 			
 		if (isValidData(toUser))
-			result = $(result).filter(function (i,n){return n.to==toUser}).toArray();
+			result = $(result).filter(function (i,n){return n.to.toLowerCase()==toUser.toLowerCase()}).toArray();
 		
 		if (isValidData(meritEqual))
 			result = $(result).filter(function (i,n){return n.merit==meritEqual}).toArray();
