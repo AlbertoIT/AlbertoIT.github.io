@@ -31,7 +31,7 @@ function createTable(title, data){
 	    
             txt += "<tr><td>" + data[x].tx + "</td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMeritLocal.html?id=" + data[x].from + "'>" + data[x].from + "</a></td><td><a href='https://albertoit.github.io/Visualization/Merit%20js%20tool/filterMeritLocal.html?id=" + data[x].to + "'>" + data[x].to + "</a></td><td>" + data[x].merit + "</td><td>" + data[x].date + "</td><td><a href='https://bitcointalk.org/index.php?topic=" + data[x].Msg + "#" + data[x].Msg.split('.')[1] + "'>Msg</a></td></tr>";
         }
-        txt +="<tr><td colspan='6'>Total: " + totalMerit + "</td></tr>"
+        txt +="<tr><th colspan='6'>Total: " + totalMerit + "</th></tr>"
         txt += "</table>"        
 
 	return txt;
