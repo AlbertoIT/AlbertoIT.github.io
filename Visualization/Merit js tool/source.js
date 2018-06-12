@@ -24,8 +24,8 @@ function createTable(title, data){
 
 	var totalMerit=0;
 	var txt = "<table border='1'>"
-        txt +="<tr><td colspan='6'>" + title + "</td></tr>"
-        txt +="<tr><td>Tx</td><td>From</td><td>To</td><td>Merits</td><td>Date</td><td>Msg</td></tr>"
+        txt +="<tr><th colspan='6'>" + title + "</th></tr>"
+        txt +="<tr><th>Tx</th><th>From</th><th>To</th><th>Merits</th><th>Date</th><th>Msg</th></tr>"
         for (x in data) {
             totalMerit+=data[x].merit;
 	    
