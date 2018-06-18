@@ -29,7 +29,7 @@ function createTable(title, data){
         for (x in data) {
             totalMerit+=data[x].merit;
 	    
-            txt += "<tr><td><a href='?tx=" + data[x].tx + "'>" + data[x].tx + "</a></td><td><a href='?id=" + data[x].from + "'>" + data[x].from + "</a> (<a href='https://bitcointalk.org/index.php?action=profile;u=" + data[x].uidFrom + "'>btk</a>)</td><td><a href='?id=" + data[x].to + "'>" + data[x].to + "</a> (<a href='https://bitcointalk.org/index.php?action=profile;u=" + data[x].uidTo + "'>btk</a>)</td><td>" + data[x].merit + "</td><td>" + data[x].date + "</td><td><a href='https://bitcointalk.org/index.php?topic=" + data[x].Msg + "#" + data[x].Msg.split('.')[1] + "'>Msg</a></td></tr>";
+            txt += "<tr><td><a href='?tx=" + data[x].tx + "'>" + data[x].tx + "</a></td><td><a href='?id=" + data[x].from + "'>" + data[x].from + "</a> (<a href='https://bitcointalk.org/index.php?action=profile;u=" + data[x].uidFrom + "'>btk</a>)</td><td><a href='?id=" + data[x].to + "'>" + data[x].to + "</a> (<a href='https://bitcointalk.org/index.php?action=profile;u=" + data[x].uidTo + "'>btk</a>)</td><td>" + data[x].merit + "</td><td>" + data[x].date + "</td><td><a href='https://bitcointalk.org/index.php?topic=" + data[x].Msg + "#" + data[x].Msg.split('.')[1] + "'>" + data[x].titlemsg + "</a></td></tr>";
         }
         txt +="<tr><th colspan='6'>Total: " + totalMerit + "</th></tr>"
         txt += "</table>"        
