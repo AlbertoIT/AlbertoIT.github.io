@@ -1,3 +1,9 @@
+var FullHistory;
+var SentData;
+var ReceivedData;
+var QueryData;
+var clipboardData;
+
 function loadJSON(callback) {   
   var xobj = new XMLHttpRequest();
   xobj.overrideMimeType("application/json");
@@ -9,7 +15,39 @@ function loadJSON(callback) {
   };
   xobj.send(null);  
 }
+
+function createClipboardContent(title, data, type){
+
+	var totalMerit=0;
+	if (type==0)
+		var forumFormattedTxt = "[b]Sent by " + data[x].from + "[/b]"
+	else if (type==1)
+		var forumFormattedTxt = "[b]Received by " + data[x].to + "[/b]"		
+	else if (type==2)
+		var forumFormattedTxt = "[b]Result Custom Query[/b]"
+	
+	
+		forumFormattedTxt += "[list]"
+        
+        for (x in data) {
+            totalMerit+=data[x].merit;
+		if (type==0)
+			forumFormattedTxt += "[li]" + data[x].date + ": " + data[x].merit  + " to [url=https://bitcointalk.org/index.php?action=profile;u=" + data[x].uidTo  + "]" + data[x].to + "[/url] for [url=https://bitcointalk.org/index.php?topic=" + data[x].Msg +  "#" + data[x].Msg.split('.')[1] +"]" + data[x].titlemsg + "[/url][/li]\n"
+		else if (type==1)
+			forumFormattedTxt += "[li]" + data[x].date + ": " + data[x].merit  + " from [url=https://bitcointalk.org/index.php?action=profile;u=" + data[x].uidFrom  + "]" + data[x].from + "[/url] for [url=https://bitcointalk.org/index.php?topic=" + data[x].Msg + "#" + data[x].Msg.split('.')[1] +"]" + data[x].titlemsg + "[/url][/li]\n"		
+		else if (type==2)
+			forumFormattedTxt += "[li]" + data[x].date + ": " + data[x].merit  + " from [url=https://bitcointalk.org/index.php?action=profile;u=" + data[x].uidFrom  + "]" + data[x].from + "[/url] to [url=https://bitcointalk.org/index.php?action=profile;u=" + data[x].uidTo  + "]" + data[x].to + "[/url] for [url=https://bitcointalk.org/index.php?topic=" + data[x].Msg  + "#" + data[x].Msg.split('.')[1] + "]" + data[x].titlemsg + "[/url][/li]\n"
+		
+			
+            
+        }       
+		forumFormattedTxt += "[/list]"
+		forumFormattedTxt += "[b]Total Merits " + totalMerit + "[/b]"
+	return forumFormattedTxt;
+}
+
 function copyToClip(str) {
+
   function listener(e) {
     e.clipboardData.setData("text/html", str);
     e.clipboardData.setData("text/plain", str);
@@ -30,11 +68,19 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-function createTable(title, data){
+function createTable(title, data, type){
 
 	var totalMerit=0;
+	
+	if (type==1)
+		var clipboardImage = "<img alt=\"Copy to clipboard\" onclick=\"javascript:copyToClip(FullHistory)\" src=\"clipboard.png\" height=\"15\" width=\"15\" />";
+	else if (type==2)
+		var clipboardImage = "<img alt=\"Copy to clipboard\" onclick=\"javascript:copyToClip(QueryData)\" src=\"clipboard.png\" height=\"15\" width=\"15\" />";
+
+	
+	
 	var txt = "<table border='1'>"
-        txt +="<tr><th colspan='6'>" + title + "</th></tr>"
+        txt +="<tr><td colspan='6'>" + title + "      " + clipboardImage + "</td></tr>"
         txt +="<tr><th>Tx</th><th>From</th><th>To</th><th>Merits</th><th>Date</th><th>Msg</th></tr>"
         for (x in data) {
             totalMerit+=data[x].merit;
@@ -162,14 +208,21 @@ var dateEqual=getParameterByName("dateequal");
 				
 		// This case we show the all merit history	
 		if (isValidData(userid)){
-			result = $(json).filter(function (i,n){return n.from.toLowerCase()==userid.toLowerCase()}).toArray();
-			var table = createTable("Sent Merit",result);
+result = $(json).filter(function (i,n){return n.from==userid}).toArray();
+			var table = createTable("Sent Merit",result,1);
 			document.getElementById("tableSent").innerHTML = table;
 			
+			//Clipboad data:
+			SentData = createClipboardContent("Sent Merit",result,0);
 			
-			result = $(json).filter(function (i,n){return n.to.toLowerCase()==userid.toLowerCase()}).toArray();
-			table = createTable("Received Merit",result);
+			result = $(json).filter(function (i,n){return n.to==userid}).toArray();
+			table = createTable("Received Merit",result,0);
 			document.getElementById("tableReceived").innerHTML = table;
+			
+			//Clipboad data:
+			ReceivedData = createClipboardContent("Sent Merit",result,1);
+			
+			FullHistory = SentData + "\n\n" + ReceivedData;
 			
 			return;
 		}
@@ -211,7 +264,8 @@ var dateEqual=getParameterByName("dateequal");
 			document.getElementById("tableSent").innerHTML = "Apply some filter!";
 		}
 		else{
-			var table = createTable("Merit Transactions",result);
+			var table = createTable("Merit Transactions",result,2);
 			document.getElementById("tableSent").innerHTML = table;
+			QueryData = createClipboardContent("Sent Merit",result,2);
 		}
 }
