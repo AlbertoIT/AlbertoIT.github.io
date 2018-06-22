@@ -72,6 +72,9 @@ function createTable(title, data, type){
 
 	var totalMerit=0;
 	
+	
+	if (type==0)
+	var clipboardImage = "";
 	if (type==1)
 		var clipboardImage = "<img alt=\"Copy to clipboard\" onclick=\"javascript:copyToClip(FullHistory)\" src=\"clipboard.png\" height=\"15\" width=\"15\" />";
 	else if (type==2)
