@@ -208,14 +208,14 @@ var dateEqual=getParameterByName("dateequal");
 				
 		// This case we show the all merit history	
 		if (isValidData(userid)){
-result = $(json).filter(function (i,n){return n.from==userid}).toArray();
+result = $(json).filter(function (i,n){return n.from.toLowerCase()==userid.toLowerCase()}).toArray();
 			var table = createTable("Sent Merit",result,1);
 			document.getElementById("tableSent").innerHTML = table;
 			
 			//Clipboad data:
 			SentData = createClipboardContent("Sent Merit",result,0);
 			
-			result = $(json).filter(function (i,n){return n.to==userid}).toArray();
+			result = $(json).filter(function (i,n){return n.to.toLowerCase()==userid.toLowerCase()}).toArray();
 			table = createTable("Received Merit",result,0);
 			document.getElementById("tableReceived").innerHTML = table;
 			
