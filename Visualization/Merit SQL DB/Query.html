@@ -17,14 +17,7 @@
     <label for='commands'>Enter some SQL</label>
     <br>
 
-    <textarea id="commands">SELECT MAX(result.total), Target,Board FROM (
-	SELECT Target, Board, SUM(Weight) AS total
-	FROM userdata as user
-	WHERE user.board in (SELECT Board FROM userdata Where board like "Local%" GROUP BY Board)
-	GROUP BY Target, Board
-	ORDER BY Board,total Desc) AS result
-GROUP BY Board
-ORDER BY result.total Desc;</textarea>
+    <textarea id="commands"></textarea>
 
 <button id="execute" class="button">Execute</button>
 
