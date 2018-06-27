@@ -111,7 +111,8 @@ var editor = CodeMirror.fromTextArea(commandsElm, {
     matchBrackets : true,
     autofocus: true,
 		extraKeys: {
-			"Ctrl-Enter": execEditorContents
+			"Ctrl-Enter": execEditorContents,
+			"F5": execEditorContents
 		}
 });
 
