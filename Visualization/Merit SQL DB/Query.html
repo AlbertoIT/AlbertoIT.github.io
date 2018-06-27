@@ -1,0 +1,40 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf8">
+  <title>SQL for Merits</title>
+  <link rel="stylesheet" href="codemirror.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="codemirror.js"></script>
+
+</head>
+<body>
+	<h1>SQL system for Full Merit History</h1>
+	<h2>Made by Piggy</h2>
+	<h3>You can learn more about how to build your SQL queries in <a href="https://www.w3schools.com/sql/">here</a></h3>
+<main>
+    <label for='commands'>Enter some SQL</label>
+    <br>
+
+    <textarea id="commands">SELECT MAX(result.total), Target,Board FROM (
+	SELECT Target, Board, SUM(Weight) AS total
+	FROM userdata as user
+	WHERE user.board in (SELECT Board FROM userdata Where board like "Local%" GROUP BY Board)
+	GROUP BY Target, Board
+	ORDER BY Board,total Desc) AS result
+GROUP BY Board
+ORDER BY result.total Desc;</textarea>
+
+<button id="execute" class="button">Execute</button>
+
+<div id="error" class="error"></div>
+
+<pre id="output">Results will be displayed here</pre>
+</main>
+
+<script src="sql.js"></script>
+<script type="text/javascript" src="gui.js"></script>
+
+</body>
+</html>
