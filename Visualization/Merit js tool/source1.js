@@ -19,9 +19,9 @@ function loadJSON(callback) {
 function createClipboardContent(title, data, type){
 
 	var totalMerit=0;
-	if (type==0)
+	if (type==0 && data[x].from != null)
 		var forumFormattedTxt = "[b]Sent by " + data[x].from + "[/b]"
-	else if (type==1)
+	else if (type==1 && data[x].to != null)
 		var forumFormattedTxt = "[b]Received by " + data[x].to + "[/b]"		
 	else if (type==2)
 		var forumFormattedTxt = "[b]Result Custom Query[/b]"
