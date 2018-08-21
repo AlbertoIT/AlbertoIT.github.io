@@ -20,9 +20,9 @@ function createClipboardContent(title, data, type){
 
 	var totalMerit=0;
 	if (type==0 && data != null)
-		var forumFormattedTxt = "[b]Sent by " + data[0].from + "[/b]"
+		var forumFormattedTxt = "[b]Sent by " + data[x].from + "[/b]"
 	else if (type==1 && data != null)
-		var forumFormattedTxt = "[b]Received by " + data[0].to + "[/b]"		
+		var forumFormattedTxt = "[b]Received by " + data[x].to + "[/b]"		
 	else if (type==2)
 		var forumFormattedTxt = "[b]Result Custom Query[/b]"
 	
